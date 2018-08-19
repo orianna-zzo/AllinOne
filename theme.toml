@@ -1,0 +1,12 @@
+name        = "AllinOne"
+license     = "MIT"
+# licenselink = "https://github.com/nishanths/cocoa-hugo-theme/blob/master/LICENSE"
+description = "All you need of a blog in one template."
+# homepage    = "https://github.com/nishanths/cocoa-hugo-theme"
+# tags        = ["open-sans", "minimal", "clean", "svg", "comments"]
+# features    = ["blog", "responsive", "404", "icons", "disqus", "metadata"]
+# min_version = 0.26
+
+[author]
+  name      = "ZHENG Zi'ou"
+  homepage  = "https://github.com/orianna-zzo"

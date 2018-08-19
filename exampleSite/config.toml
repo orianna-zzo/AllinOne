@@ -1,0 +1,79 @@
+baseurl             = "https://your.github.io/"
+builddrafts         = false
+languageCode        = "zn-cmn-Hans"
+canonifyurls        = true
+contentdir          = "content"
+layoutdir           = "layouts"
+publishdir          = "public"
+enableEmoji         = true
+
+theme               = "AllinOne"
+author              = "ZHENG Zi'ou"
+title               = "ZHENG Zi'ou"
+pygmentsuseclasses  = true
+
+
+[permalinks]
+    blog  = "blog/:year-:month/:slug/"
+
+
+[taxonomies]
+    tag = "tags"
+    series = "series"
+    category = "categories"
+
+
+[menu]
+    [[menu.main]]
+    name                   = "Blog"
+    weight                 = -120
+    identifier             = "blog"
+    url                    = "/blog/"
+
+    [[menu.main]]
+    name                   = "About"
+    weight                 = -110
+    identifier             = "about"
+    url                    = "/about/"
+
+    [[menu.main]]
+    name                   = "Code"
+    weight                 = -100
+    identifier             = "code"
+    url                    = "/code/"
+
+
+[params]
+    faviconfile              = "img/profile.png"
+    avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png (do not use in the same time as gravatar)
+    author                   = "ZHENG Zi'ou"
+    i18n_flags               = false                         # whether to display small country flags for available translations
+    selfintro                = "Be myself. Love the wonderful world. Do the right things in the right way."           # appears in the site header when set to a non-empty string
+    
+    latestpostscount       = 5                             # how many posts to display on the home page
+    cachebuster            = true                          # add the current unix timestamp in query string for cache busting css assets
+    dateform               = "Jan 2, 2006"
+    dateformfull           = "2006-01-02  Monday  15:04:05"
+    extracssfiles          = [ "/css/override.css" ]       # In your `static` directory, add/remove files as necessary.
+    noshowreadtime           = false                         # if true, don't show "<x> minutes read" in posts
+ 
+    # highlighting 
+    highlightjs              = false
+    pygmentsOptions          = ""
+    pygmentsUseClassic       = true
+    pygmentsUseClasses       = true
+    pygmentsCodeFences       = true
+    pygmentsStyle            = "autumn"
+
+    # links
+    email                    = "you@email.com"
+    github                   = "//github.com/you"
+    linkedin                 = "//linkedin.com/in/you"
+    instagram                = "//instagram.com/you"
+    include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
+
+    # analytics
+    googleAnalytics          = "UA-90057853-1"
+
+    
+    

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+
+<body lang="{{ .Site.Params.lang }}">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            {{ if .Site.Params.gravatar }}
+            <a {{ printf "href=%q" ("/" | relLangURL) | safeHTMLAttr }}><img class="avatar" src="https://gravatar.com/avatar/{{ .Site.Params.gravatar }}?s=50" rcset="https://gravatar.com/avatar/{{ .Site.Params.gravatar }}?s=100 2x, https://gravatar.com/avatar/{{ .Site.Params.gravatar }}?s=150 3x, https://gravatar.com/avatar/{{ .Site.Params.gravatar }}?s=200 4x"></a>
+            {{ else if .Site.Params.avatar }}
+                {{ $.Scratch.Add "srcset" (slice (printf "%s 1x" (.Site.Params.avatar|absURL))) }}
+                {{ $directory := replaceRE "^(.*)/[^/]+$" "$1" .Site.Params.avatar }}
+                {{ $basename := replaceRE "^.*/([^./]+).*$" "$1" .Site.Params.avatar }}
+                {{ $extension := replaceRE "^.*/[^.]+\\.([^.]+)$" "$1" .Site.Params.avatar }}
+                {{ range (readDir (printf "static/%s" $directory)) }}
+                    {{ if findRE (printf "^%s-\\d+x\\.%s$" $basename $extension) .Name }}
+                        {{ $.Scratch.Add "srcset" (slice (replaceRE (printf "^(%s)-(\\d+x)\\.(%s)$" $basename $extension) (printf "%s/$1-$2.$3 $2" ($directory|absURL)) .Name)) }}
+                    {{ end }}
+                {{ end }}
+                {{ $srcset := delimit ($.Scratch.Get "srcset") "," }}
+                <a {{ printf "href=%q" ("/" | relLangURL) | safeHTMLAttr }}><img class="avatar" src="/{{ .Site.Params.avatar }}" {{ printf "srcset=%q" $srcset | safeHTMLAttr }}></a>
+            {{ end }}
+            <a {{ printf "href=%q" ("/" | relLangURL) | safeHTMLAttr }}><div class="name">{{ .Site.Params.author }}</div></a>
+            {{ if .Site.Params.selfintro }}
+              <h3 class="self-intro">{{ .Site.Params.selfintro }}</h3>
+            {{ end }}
+            <nav>
+                <ul>
+                    {{ range .Site.Menus.main }}
+                        <li class="nav-{{ .Identifier }}"><a href="{{ .URL | absLangURL }}">{{ .Pre }}<span>{{ .Name }}</span></a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        {{ if .Site.Params.github }}
+            <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener"><img class="icon" src="/img/github.svg" alt="github" /></a>
+        {{ end }}
+
+        {{ if .Site.Params.twitter }}
+            <a href="{{ .Site.Params.twitter }}" target="_blank" rel="noopener"><img class="icon" src="/img/twitter.svg" alt="twitter" /></a>
+        {{ end }}
+
+        {{ if .Site.Params.calendar }}
+            <a href="{{ .Site.Params.calendar }}" target="_blank" rel="noopener"><img class="icon" src="/img/calendar.svg" alt="calendar" /></a>
+        {{ end }}
+
+        {{ if .Site.Params.mastodon }}
+            <a href="{{ .Site.Params.mastodon }}" target="_blank" rel="noopener"><img class="icon" src="/img/mastodon.svg" alt="mastodon" /></a>
+        {{ end }}
+
+        {{ if .Site.Params.linkedin }}
+            <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener"><img class="icon" src="/img/linkedin.svg" alt="linkedin" /></a>
+        {{ end }}
+
+        {{ if .Site.Params.facebook }}
+            <a href="{{ .Site.Params.facebook }}" target="_blank" rel="noopener"><img class="icon" src="/img/facebook.svg" alt="facebook" /></a>
+        {{ end }}
+
+        {{ if .Site.Params.instagram }}
+            <a href="{{ .Site.Params.instagram }}" target="_blank" rel="noopener"><img class="icon" src="/img/instagram.svg" alt="instagram" /></a>
+        {{ end }}
+
+        {{ if .Site.Params.px500 }}
+            <a href="{{ .Site.Params.px500 }}" target="_blank" rel="noopener"><img class="icon" src="/img/500px.svg" alt="500px" /></a>
+        {{ end }}
+
+        {{ if .Site.Params.soundcloud }}
+            <a href="{{ .Site.Params.soundcloud }}" target="_blank" rel="noopener"><img class="icon" src="/img/soundcloud.svg" alt="soundcloud" /></a>
+        {{ end }}
+
+        {{ if .Site.Params.email }}
+            <a href="mailto:{{ .Site.Params.email }}"><img class="icon" src="/img/email.svg" alt="email" /></a>
+        {{ end }}
+
+        {{ if and .Site.Params.include_rss .RSSLink }}
+            <a href="{{ .RSSLink }}"><img class="icon" src="/img/rss.svg" alt="rss" /></a>
+        {{ end }}
+
+        {{ if and .Site.Params.i18n_flags .IsTranslated }}
+            {{ range .Translations }}
+                <a href="{{ .Permalink }}"><img class="icon flag" src="/img/flags/{{ .Lang }}.svg"></a>
+            {{ end }}
+        {{ end }}
+        </div>
+    </div>
+</section>

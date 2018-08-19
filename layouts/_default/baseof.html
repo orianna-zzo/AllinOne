@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "zh-cmn-Hans" }}">
+  {{ partial "head.html" . }}
+  <body class="bg-light">
+    <!-- Code that all your templates share, like a header -->
+    
+
+    {{ block "header" . }}
+    {{ end }}
+
+    {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+    
+    {{ partial "footer.html" . }}
+    {{ partial "site-scripts.html" . }}
+  </body>
+</html>

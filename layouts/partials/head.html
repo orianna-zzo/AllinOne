@@ -1,0 +1,102 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+    
+    {{ template "_internal/opengraph.html" . }}
+
+    <title>
+    {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
+    {{ if eq $url "/" }}
+        {{ .Site.Title }}
+    {{ else }}
+        {{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Title }} {{ end }}
+    {{ end }}
+    </title>
+
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <!-- HTTPS -->
+    {{ if .Site.Params.forcehttps }}
+    <script type="text/javascript">
+        var baseURL = '{{ .Site.BaseURL }}';
+        var host = baseURL.substring(0, baseURL.length - 1).replace(/\//g, '');
+        if ((host === window.location.host) && (window.location.protocol !== 'https:')) {
+            window.location.protocol = 'https:';
+        }
+    </script>
+    {{ end }}
+
+    <!-- Fonts -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500"> -->
+    
+    <!-- Font Awesome -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="/css/vendors/fontawesome/all.min.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/solid.css" integrity="sha384-wnAC7ln+XN0UKdcPvJvtqIH3jOjs9pnKnq9qX68ImXvOGz2JuFoEiCjT8jyZQX2z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/regular.css" integrity="sha384-zkhEzh7td0PG30vxQk1D9liRKeizzot4eqkJ8gB3/I+mZ1rjgQk+BSt2F6rT2c+I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/brands.css" integrity="sha384-nT8r1Kzllf71iZl81CdFzObMsaLOhqBU1JD2+XoAALbdtWaXDOlWOZTR4v1ktjPE" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css" integrity="sha384-HbmWTHay9psM8qyzEKPc8odH4DsOuzdejtnr+OFtDmOcIVnhgReQ4GZBH7uwcjf6" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
+
+    <!-- CSS -->
+    {{ if .Site.Params.highlightjs }}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/{{ .Site.Params.highlightjsStyle | default "default" }}.min.css">
+    {{ end }}
+    <link href="/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="/css/themes/theme.css" rel="stylesheet"> -->
+    <!-- <link href="/css/vendors/mdb/compiled-4.5.9.min.css" rel="stylesheet"> -->
+    <link href="/css/vendors/mdb/mdb.css" rel="stylesheet"> 
+    <link href="/css/vendors/mdb/style.css" rel="stylesheet"> 
+    <link href="/css/main.css" rel="stylesheet">
+
+
+    <!-- {{ if .Site.Params.cachebuster }}
+        {{ $t := now }}
+        <link rel="stylesheet" href="/dist/css/reset.css?t={{$t}}">
+        <link rel="stylesheet" href="/dist/css/pygments.css?t={{$t}}">
+        <link rel="stylesheet" href="/dist/css/main.css?t={{$t}}">
+        {{range .Site.Params.extracssfiles}}
+            <link rel="stylesheet" href="{{.}}?t={{$t}}">
+        {{ end }}
+
+    {{ else }}
+        <link rel="stylesheet" href="/dist/css/reset.css">
+        <link rel="stylesheet" href="/dist/css/pygments.css">
+        <link rel="stylesheet" href="/dist/css/main.css">
+        {{range .Site.Params.extracssfiles}}
+            <link rel="stylesheet" href="{{.}}">
+        {{end}}
+
+    {{ end }} -->
+
+    <!-- Icon -->
+    <link rel="shortcut icon"
+    {{ if .Site.Params.faviconfile }}
+        href="/{{ .Site.Params.faviconfile }}"
+    {{ else if.Site.Params.avatar}}
+        href="/{{ .Site.Params.avatar }}"
+    {{ end }}
+    >
+
+
+    <!-- RSS -->
+    {{ if and .Site.Params.include_rss .RSSLink }}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+
+    <style type="text/css">
+        @media (min-width: 800px) and (max-width: 850px) {
+                .navbar:not(.top-nav-collapse) {
+                    background: #1C2331!important;
+                }
+            }
+    </style>
+
+
+</head>
