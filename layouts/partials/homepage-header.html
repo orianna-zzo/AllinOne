@@ -3,7 +3,7 @@
   {{ $path := $.Site.Params.slidesDirPath }}
 {{ end }}
   
-{{ $pathURL := "/img/header-slides" }}
+{{ $pathURL := "img/header-slides" }}
 {{ if .Site.Params.slidesDirPathURL }}
   {{ $pathURL := $.Site.Params.slidesDirPathURL }} 
 {{ end }} 
@@ -36,7 +36,7 @@
         <!--First slide-->
         <div class="carousel-item active">
           <!-- https://mdbootstrap.com/img/Photos/Others/images/77.jpg -->
-          <div class="view" style="background-image: url('{{ $pathURL }}{{ .Name | relURL }}'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('{{ $.Site.BaseURL }}{{ $pathURL }}{{ .Name | relURL }}'); background-repeat: no-repeat; background-size: cover;">
 
             <!-- Mask & flexbox options-->
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -57,7 +57,7 @@
 
         <!--Second slide-->
         <div class="carousel-item">
-          <div class="view" style="background-image: url('{{ $pathURL }}{{ .Name | relURL }}'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('{{ $.Site.BaseURL }}{{ $pathURL }}{{ .Name | relURL }}'); background-repeat: no-repeat; background-size: cover;">
 
             <!-- Mask & flexbox options-->
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -83,9 +83,9 @@
       <!-- Avatar -->
       <div class="col-12 col-sm-5 align-middle">
         {{ if $.Site.Params.avatar }}
-          <img class="pull-right avatar" src="{{ $.Site.Params.avatar }}" alt="" >
+          <img class="pull-right avatar" src="{{ $.Site.BaseURL }}{{ $.Site.Params.avatar }}" alt="" >
         {{ else if $.Site.Params.faviconfile }}
-          <img class="pull-right avatar" src="{{ $.Site.Params.faviconfile }}" alt="" >
+          <img class="pull-right avatar" src="{{ $.Site.BaseURL }}{{ $.Site.Params.faviconfile }}" alt="" >
         {{ end }}
       </div>
       
@@ -140,7 +140,7 @@
 
             {{ if and $.Site.Params.i18n_flags $.IsTranslated }}
                 {{ range .Translations }}
-                    <a href="{{ .Permalink }}"><img class="icon flag pr-1" src="/img/flags/{{ $.Lang }}.svg"></a>
+                    <a href="{{ .Permalink }}"><img class="icon flag pr-1" src="{{ $.Site.BaseURL }}img/flags/{{ $.Lang }}.svg"></a>
                 {{ end }}
             {{ end }}
         </div>
