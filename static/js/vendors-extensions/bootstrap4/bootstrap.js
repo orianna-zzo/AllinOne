@@ -3556,9 +3556,21 @@
 
 
         queries = queries.map(function (selector) {
-          return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + encodeURI(target).toLowerCase() + "\"]");
+          return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + target + "\"]");
         });
         var $link = $$$1([].slice.call(document.querySelectorAll(queries.join(','))));
+
+        if ($link.length==0) {
+
+          queries = this._selector.split(',');
+          queries = queries.map(function (selector) {
+            return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + encodeURI(target).toLowerCase() + "\"]");
+          });
+          var $link = $$$1([].slice.call(document.querySelectorAll(queries.join(','))));
+
+        }
+        
+        
 
         if ($link.hasClass(ClassName.DROPDOWN_ITEM)) {
           $link.closest(Selector.DROPDOWN).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);

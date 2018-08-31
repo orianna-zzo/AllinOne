@@ -14,7 +14,11 @@
 
       <!-- Grid column -->
 
+      {{ if .Params.toc }}
       <div class="col-md-10">
+      {{ else }}
+      <div class="container pr-5">
+      {{ end }}
 
         <!-- Spied element -->
         <div class="z-depth-1  post-wrapper white-bg">

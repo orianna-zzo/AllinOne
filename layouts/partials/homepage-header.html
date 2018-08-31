@@ -81,19 +81,23 @@
     <div class="row mx-0 headfont mb-5 pb-3">
       <!-- Avatar -->
       <div class="col-12 col-sm-5 align-middle">
-        {{ if $.Site.Params.avatar }}
-          <img class="pull-right avatar avatar-lg " src="{{ $.Site.BaseURL }}{{ $.Site.Params.avatar }}" alt="" >
-        {{ else if $.Site.Params.faviconfile }}
-          <img class="pull-right avatar avatar-lg " src="{{ $.Site.BaseURL }}{{ $.Site.Params.faviconfile }}" alt="" >
-        {{ end }}
+        <a href="{{ .Site.BaseURL }}">
+          {{ if $.Site.Params.avatar }}
+            <img class="pull-right avatar avatar-lg " src="{{ $.Site.BaseURL }}{{ $.Site.Params.avatar }}" alt="" >
+          {{ else if $.Site.Params.faviconfile }}
+            <img class="pull-right avatar avatar-lg " src="{{ $.Site.BaseURL }}{{ $.Site.Params.faviconfile }}" alt="" >
+          {{ end }}
+        </a>
       </div>
       <!-- /.Avatar -->
 
       <div class="col-12 col-sm-7 text-left pl-5">
         <!-- Description -->
-        <h1 class="display-4 mb-2 mt-2 h1">
-          <strong>{{ $.Site.Title }}</strong>
-        </h1>
+        <a href="{{ .Site.BaseURL }}">
+          <h1 class="display-4 mb-2 mt-2 h1">
+            <strong>{{ $.Site.Title }}</strong>
+          </h1>
+        </a>
         {{ range $.Site.Params.description }}
         <p class="mb-0 p" style="font-size: 1.250rem; font-weight: 200;">
             {{ . }}
