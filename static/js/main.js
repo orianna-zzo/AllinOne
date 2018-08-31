@@ -25,7 +25,7 @@ $(window).bind('hashchange', function (event) {
         // Replace '#/' with '#' to go to the correct target
         offset: $("body").attr("data-offset")? -$("body").attr("data-offset"):0 ,
         // offset: -30,
-        scrollTarget: location.hash.replace(/^\#\/?/, '#')
+        scrollTarget: decodeURI(location.hash.replace(/^\#\/?/, '#'))
     });
 });
 

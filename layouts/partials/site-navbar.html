@@ -15,7 +15,7 @@
       <!-- Brand -->
       <a class="navbar-brand" href="{{ .Site.BaseURL }}">
           {{ if .Site.Params.avatar }}
-        <img class="avatar" src="{{ .Site.Params.faviconfile }}" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        <img class="avatar" src="{{ .Site.BaseURL }}{{ .Site.Params.faviconfile }}" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
         {{ end }}
         <strong> {{ .Site.Title }}</strong>
       </a>

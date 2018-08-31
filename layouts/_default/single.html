@@ -1,12 +1,62 @@
-{{ partial "header.html" . }}
-<section class="main">
-    <div class="container">
-        <div class="content">
-            {{ partial "page-heading.html" . }}
-            <div class="markdown">
-                {{ .Content }}
+{{ define "header" }} 
+   {{ partial "site-navbar.html" . }} 
+   {{ partial "page-header.html" . }}  
+
+{{ end }} 
+
+
+{{ define "main" }}
+  <!-- Main layout -->
+  <main class="post-main-wrapper">
+    
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+
+      <div class="col-md-10">
+
+        <!-- Spied element -->
+        <div class="z-depth-1  post-wrapper white-bg">
+
+          <div class="post-header text-center" >
+            <ul class="post-meta ul-x">
+              <li><a href="#"><i class="fa fa-github pr-1" aria-hidden="true"></i>Travel</a></li>
+              <li><a href="#"><i class="fa fa-twitter pr-1" aria-hidden="true"></i>Blog</a></li>
+            </ul>
+            <div class="px-4 py-2">
+              <h1>{{ .Title }}</h1>
             </div>
+            <ul class="post-meta ul-x mt-1">
+              {{ if and .Site.Params.dateformfull .Site.Params.dateform }}
+                <li>{{ .Date.Format .Site.Params.dateform }}</li>
+              {{ else }}
+                <li>{{ .Date.Format "Jan 2, 2006" }}</li>
+              {{ end }}
+
+              {{ if not .Site.Params.noshowreadtime }}
+		        <li class="middot"></li>
+                <li>{{ i18n "readingTime" .ReadingTime }}</li>
+              {{ end }}
+            </ul>
+          </div>
+
+
+          <div class="post-content">
+            {{ .Content }}
+          </div>
+
         </div>
+        <!-- /.Spied element -->
+
+      </div>
+      {{ partial "toc.html" . }}
+
     </div>
-</section>
-{{ partial "footer.html" . }}
+    <!-- Grid row -->
+
+
+  </main>
+  <!-- Main layout -->
+
+{{ end }}
