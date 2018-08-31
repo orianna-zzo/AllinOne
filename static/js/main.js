@@ -26,7 +26,8 @@ $(window).bind('hashchange', function (event) {
         offset: $("body").attr("data-offset")? -$("body").attr("data-offset"):0 ,
         // offset: -30,
         scrollTarget: decodeURI(location.hash.replace(/^\#\/?/, '#'))
-    });
+        
+      });
 });
 
 // $(".smooth-scroll").on('click', "a", function() {

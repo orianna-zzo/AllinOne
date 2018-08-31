@@ -143,7 +143,7 @@
         var selector = element.getAttribute('data-target');
 
         if (!selector || selector === '#') {
-          selector = element.getAttribute('href') || '';
+          selector = decodeURI(element.getAttribute('href')) || '';
         }
 
         try {
@@ -3556,7 +3556,7 @@
 
 
         queries = queries.map(function (selector) {
-          return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + target + "\"]");
+          return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + encodeURI(target).toLowerCase() + "\"]");
         });
         var $link = $$$1([].slice.call(document.querySelectorAll(queries.join(','))));
 
