@@ -7,6 +7,8 @@
     
 
     {{ block "header" . }}
+      {{ partial "site-navbar.html" . }} 
+      {{ partial "page-header.html" . }}  
     {{ end }}
 
     {{ block "main" . }}

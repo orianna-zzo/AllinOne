@@ -1,5 +1,5 @@
-{{ partial "header.html" . }}
-<section class="main">
+{{ define "main" }}
+<main class="post-main-wrapper">
     <div class="container">
         <div class="content">
             {{ partial "page-heading.html" . }}
@@ -17,5 +17,5 @@
             {{ end }}
         </div>
     </div>
-</section>
-{{ partial "footer.html" . }}
+</main>
+{{ end }}
