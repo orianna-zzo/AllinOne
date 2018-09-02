@@ -13,6 +13,7 @@ Hugo theme - AllinOne.
 * Syntax highlighting with highlightjs 
 * Static profile image
 * Google Analytics
+* Font Awesome 3.1.0
 
 Most features are optional and can be individually enabled/disabled in your `config.toml`.
 
