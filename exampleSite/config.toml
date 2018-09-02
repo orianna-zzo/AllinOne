@@ -9,8 +9,8 @@ publishdir                 = "public"
 enableEmoji                = true
 
 theme                      = "AllinOne"
-author                     = "ZHENG Zi'ou"
-title                      = "ZHENG Zi'ou"
+author                     = "Orianna"
+title                      = "Orianna"
 
 
 pygmentsuseclasses         = true
