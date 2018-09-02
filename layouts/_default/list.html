@@ -1,21 +1,38 @@
 {{ define "main" }}
 <main class="post-main-wrapper">
-    <div class="container">
-        <div class="content">
-            {{ partial "page-heading.html" . }}
-            <div class="markdown">
-                {{ .Content }}
-            </div>
-            {{ with .Data.Pages }}
-            <nav class="section-items">
-                <ul>
-                {{ range .ByWeight }}
-                    <li><a {{ printf "href=%q" .URL | safeHTMLAttr }}>{{ default .Title .Params.heading }}</a></li>
-                {{ end }}
-                </ul>
-            </nav>
+  <div class="container">
+    <div class="content">
+      <ul>
+        {{ partial "page-heading.html" . }}
+        {{ if .Content }}
+          <div class="markdown">
+            {{ .Content }}
+          </div>
+        {{ end }}  
+      </ul>
+      <ul>
+        {{ if eq .Site.Params.bloggroupby "month" }}
+            {{ $.Scratch.Set "datespec" "2006.1" }}
+        {{ else if eq .Site.Params.bloggroupby "year" }}
+            {{ $.Scratch.Set "datespec" "2006" }}
+        {{ end }}
+        {{ if not ($.Scratch.Get "datespec") }}
+            {{ range .Data.Pages.ByDate.Reverse }}
+            {{ partial "li.html" . }}
             {{ end }}
-        </div>
+        {{ else }}
+            {{ range .Data.Pages.ByDate.GroupByDate ($.Scratch.Get "datespec") "desc" }}
+                <li class="post-item no-bullet">
+                    <span class="date">{{ .Key }}</span>
+                </li>
+                {{ range .Pages.ByDate.Reverse }}
+                    {{ partial "li.html" . }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+      </ul>
+
     </div>
+  </div>
 </main>
 {{ end }}

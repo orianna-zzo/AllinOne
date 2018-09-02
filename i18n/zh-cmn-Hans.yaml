@@ -1,18 +1,12 @@
-# ---
-# - id: latestPosts
-#   translation: "Latest Posts"
+---
+- id: latestPosts
+  translation: "近期文章"
 
-# - id: blogHeading
-#   translation: "Blog"
-
-# - id: pageNotFound
-#   translation: "Sorry, this page does not exist."
-
-# - id: visitHomePage
-#   translation: "Visit home page"
+- id: pageNotFound
+  translation: "抱歉，该网页不存在..."
 
 - id: readingTime
-  translation: "????{{ .Count }}??"
+  translation: "需要阅读{{ .Count }}分钟"
 
-# - id: backToPosts
-#   translation: "Back to posts"
+- id: return
+  translation: "返回"

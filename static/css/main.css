@@ -16,6 +16,14 @@ body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI", 'Raleway', "Helvetica Neue", Arial, "PingFang SC", "Lantinghei SC", "Microsoft YaHei", sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
+a {
+  color: #428bca;
+}
+
+a:hover, a:active {
+  color: #38849e;
+}
+
 .bg-light {
   background-color: #f7f7f7!important;
 }
@@ -26,6 +34,10 @@ body {
 }
 
 
+.container .content {
+  padding: 0 8rem;
+}
+
 .hr-light {
   border-top: 3px solid #fff;
   width: 80px;
@@ -34,7 +46,7 @@ body {
 
 .post-main-wrapper {
   /* padding: 5rem 5rem; */
-  margin: 3rem 2rem;
+  margin: 3rem 2rem 5rem;
 }
 
 .post-wrapper {
@@ -57,6 +69,14 @@ body {
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 2px;
+}
+
+.post-meta a {
+  color: #666;
+}
+
+.post-meta a:hover,  .post-metaa:active {
+  color: #38849e;
 }
 
 .middot:before {
@@ -89,6 +109,13 @@ h1, h2, h3, h4, h5, h6 {
 
 
 
+footer .copyright {
+  overflow: hidden;
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+}
+
 
 /* 
 
@@ -110,7 +137,9 @@ Navbar
   padding-bottom: 1px;
 }
 
-
+.navbar .navbar-nav .active {
+  font-weight: 600;
+}
 
 
 
@@ -146,11 +175,11 @@ Avatar
     float: none!important;
   }
 
-  .p {
+  .carousel-content .p {
     font-size: 1rem!important;
   }
 
-  .display-4{ 
+  .carousel-content .display-4{ 
     font-size: 2rem!important;
   }
 
@@ -158,7 +187,7 @@ Avatar
     top: 20%!important;
   } */
 
-  div {
+  .carousel-content div {
     font-size: 1rem!important;
   }
 
@@ -167,11 +196,11 @@ Avatar
 /* 横屏时高度小于等于576px */
 @media (max-height: 576px) and (orientation : landscape){
 
-  .p {
+  .carousel-content .p {
     font-size: 1rem!important;
   }
 
-  .display-4{ 
+  .carousel-content .display-4{ 
     font-size: 2rem!important;
   }
 
@@ -179,7 +208,7 @@ Avatar
     top: 20%!important;
   } */
 
-  div {
+  .carousel-content div {
     font-size: 1rem!important;
   }
 
@@ -200,7 +229,7 @@ carousel
 
 }
 
-a, a:hover, a:active {
+.carousel a, .carousel a:hover, .carousel a:active {
   color: inherit;
 }
 
@@ -291,17 +320,31 @@ toc-nav  scrollspy
 
 
 
-.toc-nav li {
+
+.toc-nav ul {
+  list-style: none;
+  margin-left: 1rem;
+  padding-left: 0;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+.toc-nav li, .toc-nav ul {
   width: 100%;
 }
+
+.toc-nav .nav-link {
+  text-overflow:ellipsis;
+  overflow:hidden;
+} 
 
 .toc-nav .nav-item, .toc-nav .nav-link {
   font-size: .8rem;
   font-weight: 400;
   line-height: 1.1rem;
   padding: 0 5px;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   color: #666;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -309,10 +352,12 @@ toc-nav  scrollspy
 
 .toc-nav a.nav-link:hover {
   background-color: transparent;
-  border-left: .025rem solid #45526e;
+  /* border-left: .025rem solid #45526e; */
+  border-left: .025rem solid #38849e;
   -webkit-box-shadow: none;
   box-shadow: none;
-  color: #45526e; 
+  /* color: #45526e;  */
+  color: #38849e; 
 }
 
 
@@ -327,11 +372,7 @@ toc-nav  scrollspy
   font-weight: 700;
 } 
 
-.toc-nav ul {
-  list-style: none;
-  margin-left: 1rem;
-  padding-left: 0;
-}
+
 
 
 
@@ -552,3 +593,48 @@ toc-nav  scrollspy
     .stepper.stepper-vertical li:not(:last-child):after {
       left: 6%; } }
 
+/* 
+  temp
+ */
+
+ .post-item {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  display: list-item;
+  list-style: disc inside;
+
+  display: flex;
+  list-style: none;
+}
+
+.post-item .meta {
+  color: #666;
+  display: flex;
+  min-width: 100px;
+  text-align: right;
+  margin-right: 16px;
+}
+
+.no-bullet {
+  color: transparent;
+  font-style: oblique;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.no-bullet .date {
+  font-size: 18px;
+  font-family: 'Raleway', 'Helvetica Neue', 'Arial', sans-serif;
+  letter-spacing: -0.005rem;
+  font-weight: 700;
+  color: #333;
+  color: #666 !important;
+  font-style: normal;
+}

@@ -19,8 +19,18 @@
 
           <div class="post-header text-center" >
             <ul class="post-meta ul-x">
-              <li><a href="#"><i class="fa fa-github pr-1" aria-hidden="true"></i>Travel</a></li>
-              <li><a href="#"><i class="fa fa-twitter pr-1" aria-hidden="true"></i>Blog</a></li>
+              {{ if .Params.categories }}
+                {{ range .Params.categories }}
+                  <li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> {{ . }} </a></li>
+                {{ end }}
+              {{ end }}
+              {{ if .Params.series }}
+                {{ range .Params.series }}
+                  <li><a href="{{ "/series/" | relLangURL }}{{ . | urlize }}"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>{{ . }}</a></li>
+                  {{ end }}
+              {{ end }}
+              <!-- <li><a href="#"><i class="fa fa-archive pr-1" aria-hidden="true"></i>Travel</a></li>
+              <li><a href="#"><i class="fa fa-cubes pr-1" aria-hidden="true"></i>Blog</a></li> -->
             </ul>
             <div class="px-4 py-2">
               <h1>{{ .Title }}</h1>

@@ -3,6 +3,10 @@
 	{{ $headers := findRE "<h[1-4].*?>(.|\n])+?</h[1-4]>" .Content }}
 	<!-- at least one header to link to -->
 	{{ if ge (len $headers) 1 }}
+		{{ $h1_n := len (findRE "<h1.*?>(.|\n])+?</h1>" .Content) }}
+		{{ $re := (cond (eq $h1_n 0) "<h[2-4]" "<h[1-4]") }}
+		{{ $renum := (cond (eq $h1_n 0) "[2-4]" "[1-4]") }}
+	
 
 		<!--Grid column-->
 		<div class="col-md-2 pl-0">
@@ -13,13 +17,14 @@
 				<ul class="nav nav-pills ml-0">
 					<!-- TOC header -->
 					<li class="nav-item pb-3 text-center">
-						<span class="font-weight-bold mb-2">- CATALOG -</span>
+						<span class="font-weight-bold mb-2">- CATALOG - </span>
 					</li>
+
 					{{ range $headers }}
 						{{ $header := . }}
-						{{ range first 1 (findRE "<h[1-4]" $header 1) }}
-							{{ range findRE "[1-4]" . 1 }}
-								{{ $next_heading := (int . ) }}
+						{{ range first 1 (findRE $re $header 1) }}
+							{{ range findRE $renum . 1 }}
+								{{ $next_heading := (cond (eq $h1_n 0) (sub (int .) 1 ) (int . ) ) }}
 								{{ range seq $next_heading }}
 									<ul class="nav">
 								{{end}}
@@ -27,7 +32,7 @@
 
 										<li class="nav-item">
 						 					<a class="nav-link" href="#{{ $anchorId }}">
-												 {{ $header | plainify | htmlEscape }}
+												 {{ $header | plainify | htmlUnescape }}
 											</a>
 										</li>
 						 
