@@ -21,6 +21,7 @@ Most features are optional and can be individually enabled/disabled in your `con
 * [Quick Start](#quick-start)
 * [Usage](#usage)
 * [License](#license)
+* [Thanks](#thanks)
 
 ## Quick Start
 
@@ -40,3 +41,10 @@ Please see the sample [`config.toml`](https://github.com/orianna-zzo/AllinOne/bl
 ## License
 
 Licensed under the MIT License. See the [LICENSE](https://github.com/nishanths/cocoa-hugo-theme/blob/master/LICENSE) file for more details.
+
+## Thanks
+
+Thanks to the following projects I learned from:
+
+* Hugo theme [cocoa](https://github.com/nishanths/cocoa-hugo-theme)
+* Material design for Bootstrap4 [mdb](https://mdbootstrap.com/)
