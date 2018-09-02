@@ -1,0 +1,25 @@
+{{- if eq (.Get 0)  "yellow" -}}
+    <mark style="background: #ffeb92fd;">
+        {{- .Inner -}}
+    </mark>
+{{- else if eq (.Get 0) "red" -}}
+    <mark style="background: #fa9494;">
+        {{- .Inner -}}
+    </mark>
+{{- else if eq (.Get 0) "blue" -}}
+    <mark style="background: #9ccaff;">
+        {{- .Inner -}}
+    </mark>
+{{- else if eq (.Get 0) "green" -}}
+    <mark style="background: #acffea;">
+        {{- .Inner -}}
+    </mark>
+{{- else if eq (.Get 0)  "purple" -}}
+    <mark style="background: #eeb4ff;">
+        {{- .Inner -}}
+    </mark>
+{{- else -}}
+    <mark style="background: .Get 0 ;">
+        {{- .Inner -}}
+    </mark>    
+{{- end -}}
