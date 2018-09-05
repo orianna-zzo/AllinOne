@@ -3,7 +3,7 @@
   translation: "近期文章"
 
 - id: pageNotFound
-  translation: "抱歉，该网页不存在..."
+  translation: "哎呀！找不到该网页..."
 
 - id: readingTime
   translation: "需要阅读{{ .Count }}分钟"

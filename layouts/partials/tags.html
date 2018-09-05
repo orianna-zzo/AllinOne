@@ -1,0 +1,9 @@
+
+<ul class="ul-x tags-sm mb-5">
+  <li><i class="fas fa-tags"></i></li>
+  {{ range .Params.tags }}
+  <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" role="button">{{ . }} </a></li>
+  <!-- <button type="button" class="btn btn-outline-default btn-rounded waves-effect">Button</button> -->
+
+  {{ end }}
+</ul>

@@ -3,7 +3,7 @@
   translation: "Latest Posts"
 
 - id: pageNotFound
-  translation: "Sorry, this page does not exist."
+  translation: "Oops! Page Not Found..."
 
 - id: readingTime
   translation:

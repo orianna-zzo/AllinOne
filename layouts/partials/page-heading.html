@@ -1,9 +1,7 @@
-<div class='py-2'>
-  <h1>
-    {{ if .Params.heading }}
-        {{ .Params.heading }}
-    {{ else }}
-        {{ .Title }}
-    {{ end }}
-  </h1>
+<div class='post-heading'>
+  {{ if .Params.heading }}
+      {{ .Params.heading }}
+  {{ else }}
+      {{ .Title }}
+  {{ end }}
 </div>

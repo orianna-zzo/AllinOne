@@ -23,8 +23,8 @@
       {{ $totalpostscount := len (.Data.Pages) }}
       {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
       {{ if gt $latestpostscount 0 }}
-        <div class='py-2'>
-          <h1>{{ i18n "latestPosts" }}</h1>
+        <div class='post-heading'>
+          {{ i18n "latestPosts" }}
         </div>
         <ul>
             {{ range (first $latestpostscount .Data.Pages.ByPublishDate.Reverse ) }}
