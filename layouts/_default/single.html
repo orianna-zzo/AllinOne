@@ -24,18 +24,46 @@
             {{ .Content }}
           </div>
 
+          <!-- Tags -->
           <div class="row">
             <div class="col-md-8">
             {{ if .Params.tags }}
               {{ partial "tags.html" . }}
             {{ end }}
             </div>
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
               <ul class="ul-x post-meta mb-5">
-                <!-- <li><a href="{{ .Type | relLangURL }}"><i class="fas fa-long-arrow-alt-right pr-2"></i>{{ i18n "return" }}</a></li> -->
+                <li><a href="{{ .Type | relLangURL }}"><i class="fas fa-long-arrow-alt-right pr-2"></i>{{ i18n "return" }}</a></li>
               </ul>
+            </div> -->
+          </div>
+          <!-- /.Tags -->
+
+          <!-- Prev & Next -->
+          <div class="row pt-3 pb-5">
+            <div class="col-md-6">
+              {{ if .PrevInSection }}
+              <div>{{ i18n "previousPost" }}</div>
+              <a href={{.PrevInSection.Permalink}}>
+                
+                  <i class="fas fa-angle-left"></i>
+                  {{ .PrevInSection.Title }}
+                
+              </a>
+              {{ end }}
+
+            </div>
+            <div class="col-md-6" >
+              {{ if .NextInSection }}
+              <div class="text-right">{{ i18n "nextPost" }}</div>
+              <a href={{.NextInSection.Permalink}} class="pull-right">
+                  {{ .NextInSection.Title }}
+                  <i class="fas fa-angle-right"></i>
+              </a>
+              {{ end }}
             </div>
           </div>
+          <!-- /.Prev & Next -->
 
         </div>
         <!-- /.Spied element -->

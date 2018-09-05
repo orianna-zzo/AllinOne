@@ -10,3 +10,9 @@
 
 - id: return
   translation: "返回"
+
+- id: previousPost
+  translation: "上一篇"
+  
+- id: nextPost
+  translation: "下一篇" 

@@ -12,3 +12,9 @@
 
 - id: return
   translation: "Return"
+
+- id: previousPost
+  translation: "Previous"
+  
+- id: nextPost
+  translation: "Next"  
