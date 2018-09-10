@@ -76,10 +76,14 @@ a:hover, a:active {
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 2px;
-  padding-top: .6rem;
+  padding-top: .25rem;
 }
 
 .post-meta a {
+  color: #666;
+}
+
+.dark-grey {
   color: #666;
 }
 

@@ -40,25 +40,36 @@
           <!-- /.Tags -->
 
           <!-- Prev & Next -->
-          <div class="row pt-3 pb-5">
+          <div class="row pt-3">
             <div class="col-md-6">
               {{ if .PrevInSection }}
-              <div>{{ i18n "previousPost" }}</div>
-              <a href={{.PrevInSection.Permalink}}>
+              <div class="post-meta">{{ i18n "previousPost" }}</div>
+              {{ end }}
+            </div>
+            <div class="col-md-6 text-right" >
+              {{ if .NextInSection }}
+              <div class="post-meta">{{ i18n "nextPost" }}</div>
+              {{ end }}
+            </div>
+          </div>
+
+          <div class="row pt-1 pb-5">
+            <div class="col-md-6">
+              {{ if .PrevInSection }}
+              <a href={{.PrevInSection.Permalink}} class="post-meta">
                 
-                  <i class="fas fa-angle-left"></i>
+                  <i class="fas fa-angle-left dark-grey"></i>
                   {{ .PrevInSection.Title }}
                 
               </a>
               {{ end }}
 
             </div>
-            <div class="col-md-6" >
+            <div class="col-md-6 text-right" >
               {{ if .NextInSection }}
-              <div class="text-right">{{ i18n "nextPost" }}</div>
-              <a href={{.NextInSection.Permalink}} class="pull-right">
+              <a href={{.NextInSection.Permalink}} class="post-meta">
                   {{ .NextInSection.Title }}
-                  <i class="fas fa-angle-right"></i>
+                  <i class="fas fa-angle-right dark-grey"></i>
               </a>
               {{ end }}
             </div>
