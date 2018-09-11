@@ -14,6 +14,8 @@ Layout
 
 body {
   font-family: -apple-system,BlinkMacSystemFont,'Raleway', "Helvetica Neue", Arial, "PingFang SC", "Lantinghei SC", "Microsoft YaHei", sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: #333;
+  line-height: 1.6;
 }
 
 a {
@@ -128,6 +130,145 @@ footer .copyright {
   font-size: 0.875rem;
 }
 
+
+/* 
+
+Markdown
+
+*/
+
+.markdown h1, .markdown h2, .markdown h3, 
+.markdown h4, .markdown h5, .markdown h6 {
+  font-weight: 500;
+}
+
+.markdown h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.8rem;
+  margin-top: 2.3rem;
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.markdown h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.2rem;
+  margin-top: 1.7rem;
+}
+
+.markdown h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1.25rem;
+}
+
+.markdown h5 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  margin-top: 1.25rem;
+}
+
+.markdown h6 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1.25rem;
+}
+
+.markdown b, .markdown strong {
+  font-weight: 600;
+}
+
+.markdown wrap {
+  border-radius: 7px;
+  padding: .15em .5em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  border: 1px solid #ebebeb;
+  background: #f8f8f8;
+  font-size: 87.5%;
+}
+
+.markdown pre, .markdown code {
+  background-color: #f7f7f7;
+  /* font-size: 1rem; */
+}
+
+/* enclosed by single backtick (`) */
+.markdown code {
+  padding: .15em .5em;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  border-radius: 4px;
+}
+
+/* enclosed by 3 backticks (```) */
+.markdown pre {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  line-height: 1.5em;
+  /* white-space: pre; */
+  /* white-space: pre-wrap; */
+  /* word-break: break-all; */
+  /* word-wrap: break-word; */
+  white-space: pre;
+  tab-size: 4;
+}
+
+.markdown pre code {
+  padding: 0;
+}
+
+.markdown p {
+  margin-top: 0;
+  /* margin-bottom: 0.75em; */
+}
+
+.markdown a {
+  color: #428bca;
+}
+
+.markdown a:hover, .markdown a:active {
+  color: #38849e;
+}
+
+.markdown blockquote {
+  padding: .5rem 1rem;
+  margin: .8rem 0;
+  color: #7a7a7a;
+  border-left: .25rem solid #e5e5e5;
+}
+
+.markdown blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown table {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  /* width: 100%; */
+  vertical-align: middle;
+  min-width: 60%;
+}
+
+.markdown table th {
+  font-weight: 600;
+  text-align: center;
+}
+
+.markdown td, .markdown th {
+  padding: .25rem .5rem;
+  border: 1px solid #e5e5e5;
+}
+ .markdown tbody tr:nth-child(odd) td,
+ .markdown tbody tr:nth-child(odd) th {
+  background-color: #f7f7f7;
+ }
 
 /*
  
@@ -329,6 +470,11 @@ toc-nav  scrollspy
   padding-bottom: 1.5rem;
   font-size: .875rem; 
 }
+
+/* .toc-nav[data-toggle=page-scrollspy] .nav-item+ul {
+  display: none;
+  padding-bottom: 10px;
+} */
 
 #TableOfContents {
   margin-left: -1rem;
