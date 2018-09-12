@@ -46,6 +46,7 @@ Please see the sample [`config.toml`](https://github.com/orianna-zzo/AllinOne/bl
 
 There are three ways to add summary to each post.
 * [Hugo-defined Summary Split](https://gohugo.io/content-management/summaries/)
+
   By default, Hugo automatically takes the first 70 words of your content as its summary and stores it into the `.Summary` page variable for use. It is much easier with no additional work, but it might not the one you want.
 
   If Chinese/Japanese/Korean (CJK) languages are in the content, set `hasCJKLanguage` as `true` in the `config.toml`, so that Hugo could auto detect CJK languages to make `.Summary` and `.WordCount` behave correctly. [See here](ttps://gohugo.io/getting-started/configuration)
@@ -53,9 +54,11 @@ There are three ways to add summary to each post.
   The length of text to show in a `.Summary` could be set as `summaryLength` in `config.toml`. [See here](https://gohugo.io/getting-started/configuration/)
 
 * [User-defined Summary Split](https://gohugo.io/content-management/summaries/)
+
   Alternatively, you may add the \<!--more--\> summary divider where you want to split the article. Content that comes before the summary divider will be used as that content’s summary and stored in the `.Summary` page variable with all HTML formatting intact. The only extra work is add the \<!--more--\> summary divider.
 
 * User-defined Summary 
+
   You may want a specific summary for the post other than the front sentences of the content. In this case, you could but summary in the yaml head of the post with the param name `summary`.
 
 ## License
