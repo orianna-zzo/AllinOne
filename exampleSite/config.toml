@@ -7,6 +7,8 @@ contentdir                 = "content"
 layoutdir                  = "layouts"
 publishdir                 = "public"
 enableEmoji                = true
+hasCJKLanguage             = true
+summaryLength              = 200
 
 theme                      = "AllinOne"
 author                     = "Orianna"
@@ -14,6 +16,7 @@ title                      = "Orianna"
 
 
 pygmentsuseclasses         = true
+
 
 
 [permalinks]

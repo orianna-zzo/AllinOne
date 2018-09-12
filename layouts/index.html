@@ -19,19 +19,19 @@
 {{ define "main" }}
   <!-- Main layout -->
   <main class="container">
-    <div class="content pt-5">
+    <div class="pt-5 px-5 mx-5">
       {{ $totalpostscount := len (.Data.Pages) }}
       {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
       {{ if gt $latestpostscount 0 }}
-        <div class='post-heading'>
+        <!-- <div class='post-heading'>
           {{ i18n "latestPosts" }}
-        </div>
-        <ul>
+        </div> -->
+        <div>
             {{ range (first $latestpostscount .Data.Pages.ByPublishDate.Reverse ) }}
-                {{ partial "li.html" . }}
+                {{ partial "post-card.html" . }}
             {{ end }}
             
-        </ul>
+        </div>
       {{ end }}
 
     </div>

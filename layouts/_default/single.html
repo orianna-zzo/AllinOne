@@ -15,7 +15,7 @@
       {{ end }}
 
         <!-- Spied element -->
-        <div class="z-depth-1  post-wrapper white-bg">
+        <div class="z-depth-1  post-wrapper white-bg single-post">
 
           {{ partial "post-header.html" . }}
 
@@ -28,7 +28,9 @@
           <div class="row">
             <div class="col-md-8">
             {{ if .Params.tags }}
-              {{ partial "tags.html" . }}
+              <div class="mb-5">
+                {{ partial "tags.html" . }}
+              </div>
             {{ end }}
             </div>
             <!-- <div class="col-md-4">

@@ -1,0 +1,41 @@
+<div class="post-wrapper white-bg">
+  <div class="a-inherit-color">
+    <a href="{{ .Permalink }}">
+      <div class="post-header text-center">
+        <div class="px-4 post-heading">{{ .Title }}</div>
+        <div class="post-meta">
+          {{ if and .Site.Params.dateformfull .Site.Params.dateform }}
+            {{ .Date.Format .Site.Params.dateform }}
+          {{ else }}
+            {{ .Date.Format "Jan 2, 2006" }}
+          {{ end }}
+        </div>
+      </div>
+      {{ if .Params.summary }}
+        {{ .Params.summary }}
+      {{ else }}
+        {{ .Summary }}
+      {{ end }}
+    </a>
+  </div>
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      {{ if .Params.categories }}
+        {{ range .Params.categories }}
+          <li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> {{ . }} </a></li>
+        {{ end }}
+      {{ end }}
+      {{ if .Params.series }}
+        {{ range .Params.series }}
+          <li><a href="{{ "/series/" | relLangURL }}{{ . | urlize }}"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>{{ . }}</a></li>
+        {{ end }}
+      {{ end }}
+    </div>
+    <div>
+      {{ if .Params.tags }}
+        {{ partial "tags.html" . }}
+      {{ end }}
+    </div>
+  </div>
+
+</div>

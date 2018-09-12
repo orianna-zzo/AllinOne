@@ -1,5 +1,5 @@
 <div class="post-header text-center" >
-  <ul class="post-meta ul-x">
+  <ul class="post-meta li-x">
     {{ if .Params.categories }}
       {{ range .Params.categories }}
         <li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> {{ . }} </a></li>
@@ -18,7 +18,7 @@
   </div> -->
   <div class="px-4 post-heading">{{ .Title }}</div>
 
-  <ul class="post-meta ul-x mt-1">
+  <ul class="post-meta li-x mt-1">
     {{ if and .Site.Params.dateformfull .Site.Params.dateform }}
       <li>{{ .Date.Format .Site.Params.dateform }}</li>
     {{ else }}

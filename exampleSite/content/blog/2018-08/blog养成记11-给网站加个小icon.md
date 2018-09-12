@@ -8,6 +8,7 @@ tags: ["前端", "css", "blog"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
 toc: true
+summary: "我们经常看到百度等网页会有自己的网站图标，在浏览器打开时显示在左侧，那如何给自己的网站也添加这么一个icon呢？"
 ---
 
 这部分其实很简单，只需要在`index.html`的`<head>`部分增加以下一句话就好：
