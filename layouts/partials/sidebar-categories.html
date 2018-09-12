@@ -1,24 +1,24 @@
 {{ with .Site.Taxonomies.categories }}
-<div class="post-meta">
-  <div class="mb-2">
-    <a href="{{ "/categories/" | relLangURL }}">
-      <span class="font-weight-bold text-uppercase post-meta">
-        <i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 
-        Categories
-      </span>
-    </a>
-  </div>
+  <div class="post-meta">
+    <div class="mb-2">
+      <a href="{{ "/categories/" | relLangURL }}">
+        <span class="font-weight-bold text-uppercase post-meta">
+          <i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 
+          Categories
+        </span>
+      </a>
+    </div>
 
-  <div class="li-x post-meta" style="margin-left: -8px;">
-     
-    {{ range $index, $element := .ByCount }}
-      {{ if gt $index 0 }}
-        <li class="middot"></li>
+    <div class="li-x post-meta" style="margin-left: -8px;">
+      
+      {{ range $index, $element := .ByCount }}
+        {{ if gt $index 0 }}
+          <li class="middot"></li>
+        {{ end }}
+        <li class="py-1"><a href="{{ "/categories/" | relLangURL }}{{ $element.Name | urlize }}"><span>{{ $element.Name }} ({{ .Count }})</span></a></li>
       {{ end }}
-      <li class="py-1"><a href="{{ "/categories/" | relLangURL }}{{ $element.Name | urlize }}"><span>{{ $element.Name }} ({{ .Count }})</span></a></li>
-    {{ end }}
+    </div>
   </div>
-</div>
 
-<hr>
+  <hr>
 {{ end }}

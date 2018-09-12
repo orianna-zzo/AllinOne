@@ -63,7 +63,7 @@ There are three ways to add summary to each post.
 
 ## License
 
-Licensed under the MIT License. See the [LICENSE](https://github.com/nishanths/cocoa-hugo-theme/blob/master/LICENSE) file for more details.
+Licensed under the MIT License. See the [LICENSE](https://github.com/orianna-zzo/AllinOne/blob/master/LICENSE) file for more details.
 
 ## Thanks
 
