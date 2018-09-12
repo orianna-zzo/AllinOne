@@ -49,7 +49,7 @@ There are three ways to add summary to each post.
 
   By default, Hugo automatically takes the first 70 words of your content as its summary and stores it into the `.Summary` page variable for use. It is much easier with no additional work, but it might not the one you want.
 
-  If Chinese/Japanese/Korean (CJK) languages are in the content, set `hasCJKLanguage` as `true` in the `config.toml`, so that Hugo could auto detect CJK languages to make `.Summary` and `.WordCount` behave correctly. [See here](ttps://gohugo.io/getting-started/configuration)
+  If Chinese/Japanese/Korean (CJK) languages are in the content, set `hasCJKLanguage` as `true` in the `config.toml`, so that Hugo could auto detect CJK languages to make `.Summary` and `.WordCount` behave correctly. [See here](https://gohugo.io/getting-started/configuration)
 
   The length of text to show in a `.Summary` could be set as `summaryLength` in `config.toml`. [See here](https://gohugo.io/getting-started/configuration/)
 
