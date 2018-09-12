@@ -1,0 +1,46 @@
+{{ define "main" }}
+  <main class="post-main-wrapper px-5">
+    <!-- <div class="container"> -->
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3">
+        <hr>
+        
+        {{ partial "sidebar-categories.html" . }}
+        
+        {{ partial "sidebar-tags.html" . }}
+
+      </div>
+      <!-- /.Sidebar -->
+
+      <!-- Post list -->
+      <!-- <div class="content"> -->
+      <div class="col-md-9 mt-3">  
+        <ul>
+          {{ partial "page-heading.html" . }}
+        
+          {{ if .Content }}
+            <div class="markdown">
+              {{ .Content }}
+            </div>
+          {{ end }}  
+        </ul>
+        <ul>
+          
+          {{ range .Data.Terms.ByCount }}
+
+            <li class="post-item">
+              
+              <a href="{{ .Name | urlize }}"><span>{{ .Name }}</span></a>
+              <!-- <span class="ml-3">{{ .Count }} posts</span> -->
+              
+            </li>
+            
+          {{ end }}
+        </ul>
+      </div>
+      <!-- /.Post list -->
+      
+    </div>
+  </main>
+{{ end }}

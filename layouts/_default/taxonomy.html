@@ -1,7 +1,21 @@
 {{ define "main" }}
-<main class="post-main-wrapper">
-  <div class="container">
-    <div class="content">
+<main class="post-main-wrapper px-5">
+  <!-- <div class="container"> -->
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3">
+      <hr>
+      
+      {{ partial "sidebar-categories.html" . }}
+      
+      {{ partial "sidebar-tags.html" . }}
+
+    </div>
+    <!-- /.Sidebar -->
+
+    <!-- Post list -->
+    <!-- <div class="content"> -->
+    <div class="col-md-9 mt-3">
       <ul>
         {{ partial "page-heading.html" . }}
       
@@ -32,8 +46,9 @@
             {{ end }}
         {{ end }}
       </ul>
-
     </div>
+    <!-- /.Post list -->
+    
   </div>
-</main>
+</main> 
 {{ end }}

@@ -18,21 +18,38 @@
 
 {{ define "main" }}
   <!-- Main layout -->
-  <main class="container">
-    <div class="pt-5 px-5 mx-5">
-      {{ $totalpostscount := len (.Data.Pages) }}
-      {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
-      {{ if gt $latestpostscount 0 }}
-        <!-- <div class='post-heading'>
-          {{ i18n "latestPosts" }}
-        </div> -->
-        <div>
-            {{ range (first $latestpostscount .Data.Pages.ByPublishDate.Reverse ) }}
-                {{ partial "post-card.html" . }}
-            {{ end }}
-            
-        </div>
-      {{ end }}
+  <main class="post-main-wrapper px-5">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3">
+        <hr>
+        
+        {{ partial "sidebar-categories.html" . }}
+        
+        {{ partial "sidebar-tags.html" . }}
+
+      </div>
+      <!-- /.Sidebar -->
+
+      <!-- Post list -->
+      <!-- <div class="pt-5 px-5 mx-5"> -->
+      <div class="col-md-9 mt-3">  
+        {{ $totalpostscount := len (.Data.Pages) }}
+        {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
+        {{ if gt $latestpostscount 0 }}
+          <!-- <div class='post-heading'>
+            {{ i18n "latestPosts" }}
+          </div> -->
+          <div>
+              {{ range (first $latestpostscount .Data.Pages.ByPublishDate.Reverse ) }}
+                  {{ partial "post-card.html" . }}
+              {{ end }}
+              
+          </div>
+        {{ end }}
+
+      </div>
+      <!-- /.Post list -->
 
     </div>
   </main>

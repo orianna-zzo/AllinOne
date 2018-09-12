@@ -1,9 +1,10 @@
 
-<div class="li-x tags-sm">
-  <li><i class="fas fa-tags"></i></li>
-  {{ range .Params.tags }}
-    <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" role="button">{{ . }} </a></li>
-    <!-- <button type="button" class="btn btn-outline-default btn-rounded waves-effect">Button</button> -->
-
-  {{ end }}
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="{{ "/tags/" | relLangURL }}"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    {{ range .Params.tags }}
+      <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" role="button">{{ . }} </a></li>
+      <!-- <button type="button" class="btn btn-outline-default btn-rounded waves-effect">Button</button> -->
+    {{ end }}
+  </div>
 </div>
