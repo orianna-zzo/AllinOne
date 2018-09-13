@@ -38,6 +38,11 @@ body {
   line-height: 1.6;
 }
 
+img {
+  margin: 1rem 0;
+  max-width: 100%;
+}
+
 a {
   /* color: #428bca; */
   color: var(--link-color);
@@ -98,7 +103,7 @@ a:hover, a:active {
 
 .post-wrapper {
   margin: 0 1rem 3rem 1rem;
-  padding: 2rem 4rem 3rem;
+  padding: 2.5rem 4rem;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.08), 0 2px 6px 0 rgba(0, 0, 0, 0.1); 
 }
 
@@ -109,6 +114,26 @@ a:hover, a:active {
 
 .post-header {
   padding-bottom: 1rem;
+}
+
+.post-header img {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.post-header .view {
+
+  margin: 1rem 0;
+  margin-top: 2rem;
+
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+  /* vertical-align: middle;  */
+
+  display: flex;
+  align-items: center;
 }
 
 .post-heading {
@@ -360,6 +385,11 @@ Markdown
   /* background-color: #f7f7f7; */
   background-color: var(--grey-l4);
  }
+
+ .markdown img {
+  margin: 1rem 0;
+  max-width: 100%;
+}
 
 /*
  

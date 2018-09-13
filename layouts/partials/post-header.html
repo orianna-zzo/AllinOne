@@ -10,12 +10,8 @@
         <li><a href="{{ "/series/" | relLangURL }}{{ . | urlize }}"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>{{ . }}</a></li>
       {{ end }}
     {{ end }}
-    <!-- <li><a href="#"><i class="fa fa-archive pr-1" aria-hidden="true"></i>Travel</a></li>
-    <li><a href="#"><i class="fa fa-cubes pr-1" aria-hidden="true"></i>Blog</a></li> -->
   </ul>
-  <!-- <div class="px-4 py-2">
-    <h1>{{ .Title }}</h1>
-  </div> -->
+
   <div class="px-4 post-heading">{{ .Title }}</div>
 
   <ul class="post-meta li-x mt-1">
@@ -30,4 +26,10 @@
       <li>{{ i18n "readingTime" .ReadingTime }}</li>
     {{ end }}
   </ul>
+  {{ with .Params.img }}
+    <div class="view">
+      <img src="{{ . | urlize }}" />
+    </div>
+  {{ end }}
+
 </div>
