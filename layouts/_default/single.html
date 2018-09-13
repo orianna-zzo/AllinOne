@@ -60,7 +60,7 @@
             <div class="col-md-6">
               {{ if .PrevInSection }}
               <a href={{.PrevInSection.Permalink}} class="post-meta"> 
-                  <i class="fas fa-angle-left dark-grey font-weight-bold"></i>
+                  <i class="fas fa-angle-left text-grey font-weight-bold"></i>
                   {{ .PrevInSection.Title }}
                 
               </a>
@@ -71,7 +71,7 @@
               {{ if .NextInSection }}
               <a href={{.NextInSection.Permalink}} class="post-meta">
                   {{ .NextInSection.Title }}
-                  <i class="fas fa-angle-right dark-grey font-weight-bold"></i>
+                  <i class="fas fa-angle-right text-grey font-weight-bold"></i>
               </a>
               {{ end }}
             </div>

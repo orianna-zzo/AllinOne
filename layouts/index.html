@@ -7,7 +7,7 @@
     <section class="container pt-5 text-center">
       <h1 class="display-3">{{ $.Site.Params.welcome_head }}</h1>
       {{ with $.Site.Params.welcome_word }}
-      <p style="font-size:1.8rem; color: gray;">{{ $.Site.Params.welcome_word }}</p>
+      <p style="font-size:1.8rem; color: var(--text-light);">{{ $.Site.Params.welcome_word }}</p>
       {{ end }}
     </section>
   {{ end }}
