@@ -28,10 +28,14 @@
           {{ end }}  
         </ul>
         <div>
-          
-            {{ range  .Data.Pages.ByPublishDate.Reverse  }}
-                {{ partial "post-card.html" . }}
-            {{ end }}
+          <div class="pagination pagination-outline justify-content-end active-color">
+            {{ $paginator := .Paginate .Data.Pages.ByPublishDate.Reverse }}
+            {{ template "_internal/pagination.html" . }}
+          </div>
+
+          {{ range $paginator.Pages }}
+              {{ partial "post-card.html" . }}
+          {{ end }}
             
         </div>
       </div>
