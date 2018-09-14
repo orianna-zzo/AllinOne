@@ -1,22 +1,32 @@
-{{ with .Site.Taxonomies.tags }}
-  <div class="post-meta">
-    <div class="mb-2">
-      <a href="{{ "/tags/" | relLangURL }}">
-        <span class="font-weight-bold text-uppercase post-meta">
-          <i class="fas fa-tags pr-1" aria-hidden="true"></i> 
-          Featured Tags
-        </span>
-      </a>
+
+{{ range where .Pages ".Params.tags" "ne" nil }}
+  {{ $.Scratch.Add "tags"  .Params.tags }}
+{{ end }}
+
+{{ $terms := uniq ($.Scratch.Get "tags") }}
+
+{{ if gt (len $terms) 0 }}
+  {{ with .Site.Taxonomies.tags }}
+    <div class="post-meta">
+      <div class="mb-2">
+        <a href="{{ "/tags/" | relLangURL }}">
+          <span class="font-weight-bold text-uppercase post-meta">
+            <i class="fas fa-tags pr-1" aria-hidden="true"></i> 
+            Featured Tags
+          </span>
+        </a>
+      </div>
+
+      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
+        
+        
+        {{ range first 20 (where .ByCount "Name" "in" $terms)  }}
+            <li><a href="{{ "/tags/" | relLangURL }}{{ .Name | urlize }}" role="button"><span>{{ .Name }} ({{ .Count }})</span></a></li>
+          
+        {{ end }}
+      </div>
     </div>
 
-    <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-      
-      
-      {{ range first 20 .ByCount }}
-        <li><a href="{{ "/tags/" | relLangURL }}{{ .Name | urlize }}" role="button"><span>{{ .Name }} ({{ .Count }})</span></a></li>
-      {{ end }}
-    </div>
-  </div>
-
-  <hr>
+    <hr>
+  {{ end }}
 {{ end }}
