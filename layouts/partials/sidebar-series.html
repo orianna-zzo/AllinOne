@@ -1,22 +1,54 @@
-{{ with .Site.Taxonomies.series }}
-  <div class="post-meta">
-    <div class="mb-2">
-      <a href="{{ "/series/" | relLangURL }}">
-        <span class="font-weight-bold text-uppercase post-meta">
-          <i class="fas fa-bookmark pr-1" aria-hidden="true"></i> 
-          Recommend Series
-        </span>
-      </a>
-    </div>
+{{ range where .Pages ".Params.series" "ne" nil }}
+  {{ $.Scratch.Add "series" (apply .Params.series "lower" ".") }}
+{{ end }}
 
-    <div class="post-meta" >
-      
-      {{ range first 5 .ByCount }}
-        <li class="py-1"><a href="{{ "/series/" | relLangURL }}{{ .Name | urlize }}"><span>{{ .Name }} ({{ .Count }})</span></a></li>
-      {{ end }}
-    </div>
-  
+{{ $terms := uniq ($.Scratch.Get "series") }}
+
+{{ $kind := .Kind }}
+
+{{ if or (gt (len $terms) 0) (eq $kind "home") }}
+  <hr>
+  {{ with .Site.Taxonomies.series }}
+    <div class="post-meta">
+      <div class="mb-2">
+        <a href="{{ "/series/" | relLangURL }}">
+          <span class="font-weight-bold text-uppercase post-meta">
+            <i class="fas fa-bookmark pr-1" aria-hidden="true"></i> 
+            Recommend Series
+          </span>
+        </a>
+      </div>
+     
+      <div class="post-meta" >
+        {{ if eq $kind "home" }}
+          <!-- Homepage -->
+          {{ range first 5 .ByCount }}
+
+            {{ $title := add .Name ( add (add " (" (.Count | string)) ")" ) | title }}
+            {{ $url := add ("/series/" | relLangURL) (.Name | urlize) }}
+            {{ $data :=  (where $.Site.Data.series.series ".name" .Name) }}
+            {{ if gt (len $data) 0 }}   
+              <!-- In Data  -->
+              {{ range $data }}
+                {{ partial "sidebar-card.html" (dict "url" $url "title" $title "img_path" .img "text" .summary ) }}
+              {{ end }}
+            {{ else }}
+              <!-- Not in Data -->
+              {{ partial "sidebar-card.html" (dict "url" $url "title" $title "img_path" "/img/default.jpeg" "text" nil ) }}
+            {{ end }}
+          
+          {{ end }}
+
+        {{ else }}
+          <!-- Others -->
+          {{ range first 5 (where .ByCount "Name" "in" $terms) }}
+            <li class="py-1"><a href="{{ "/series/" | relLangURL }}{{ .Name | urlize }}"><span>{{ .Name | title }} ({{ .Count }})</span></a></li>
+          {{ end }}
+        {{ end }}
+      </div>
     
-  </div>
+      
+    </div>
+  {{ end }}
 {{ end }}
   

@@ -1,11 +1,12 @@
 
 {{ range where .Pages ".Params.tags" "ne" nil }}
-  {{ $.Scratch.Add "tags"  .Params.tags }}
+  {{ $.Scratch.Add "tags"  (apply .Params.tags "lower" ".") }}
 {{ end }}
 
 {{ $terms := uniq ($.Scratch.Get "tags") }}
 
 {{ if gt (len $terms) 0 }}
+  <hr>
   {{ with .Site.Taxonomies.tags }}
     <div class="post-meta">
       <div class="mb-2">
@@ -27,6 +28,6 @@
       </div>
     </div>
 
-    <hr>
+    
   {{ end }}
 {{ end }}

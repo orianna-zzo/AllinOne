@@ -1,10 +1,12 @@
+{{ $kind := .Kind }}
 {{ range where .Pages ".Params.categories" "ne" nil }}
-  {{ $.Scratch.Add "categories"  .Params.categories }}
+  {{ $.Scratch.Add "categories"  (apply .Params.categories "lower" ".") }}
 {{ end }}
 
 {{ $terms := uniq ($.Scratch.Get "categories") }}
 
 {{ if gt (len $terms) 0 }}
+  <hr>
   {{ with .Site.Taxonomies.categories }}
     <div class="post-meta">
       <div class="mb-2">
@@ -17,7 +19,7 @@
       </div>
 
       <div class="li-x post-meta" style="margin-left: -8px;">
-        {{ if eq .Kind "setion" }}
+        {{ if eq $kind "setion" }}
           <!-- Section -->
           {{ range $index, $element := where .ByCount "Name" "in" $terms }}
             {{ if gt $index 0 }}
@@ -25,7 +27,7 @@
             {{ end }}
             <li class="py-1">
               <a href="{{ "/categories/" | relLangURL }}{{ $element.Name | urlize }}">
-                <span>{{ $element.Name }} ({{ .Count }})</span>
+                <span>{{ $element.Name | title }} ({{ .Count }})</span>
               </a>
             </li>           
           {{ end }}
@@ -37,7 +39,7 @@
             {{ end }}
             <li class="py-1">
               <a href="{{ "/categories/" | relLangURL }}{{ $element.Name | urlize }}">
-                <span>{{ $element.Name }} ({{ .Count }})</span>
+                <span>{{ $element.Name | title }} ({{ .Count }})</span>
               </a>
             </li>           
           {{ end }}
@@ -45,6 +47,6 @@
       </div>
     </div>
 
-    <hr>
+    <!-- <hr> -->
   {{ end }}
 {{ end }}
