@@ -1,4 +1,4 @@
-baseUrl                    = "https://orianna-zzo.github.io/AllinOne-html/"
+baseURL                   = "https://orianna-zzo.github.io/AllinOne-html/"
 projectDir                 = "AllinOne-html"
 builddrafts                = false
 languageCode               = "zn-cmn-Hans"
@@ -9,6 +9,7 @@ publishdir                 = "public"
 enableEmoji                = true
 hasCJKLanguage             = true
 summaryLength              = 200
+Paginate                   = 1
 
 theme                      = "AllinOne"
 author                     = "Orianna"
@@ -55,7 +56,7 @@ pygmentsuseclasses         = true
   avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png 
   description              = ["Be myself.", "Love the wonderful world.", "Do the right things and be a better man."]           # appears in the site header when set to a non-empty string
   welcome_head             = "Hello, World!"
-  welcome_word             = "Tomorrow is another day!"
+  welcome_word             = "~ No Day But Today ~"
 
   latestpostscount         = 5                             # how many posts to display on the home page
   bloggroupby              = 'month'

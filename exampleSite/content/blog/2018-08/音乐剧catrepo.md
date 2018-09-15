@@ -5,6 +5,7 @@ title: "音乐剧《Cat》repo"
 tags: ["musical", "大剧院"]
 series: ["观后repo"]
 categories: ["品鉴评论"]
+img: "/images/blog/2018-08/test3.jpg"
 toc: true
 ---
 

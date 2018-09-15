@@ -7,6 +7,7 @@ title: "Blog养成记(14) 让同页滚动更平滑"
 tags: ["前端", "js", "blog"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
+img: "/images/blog/2018-08/test1.jpg"
 toc: true
 ---
 
@@ -94,6 +95,10 @@ if (location.hash) {
 ```
 
 这句话通过`body`标签找`data-offset`属性，将该属性中的值赋给smoothScroll，从而获得该网页的偏移量。
+
+测试一下加一张图片
+
+![test1](/images/blog/2018-08/test1.jpg)
 
 ## 版本控制
 
