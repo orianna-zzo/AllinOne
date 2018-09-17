@@ -10,11 +10,10 @@
   {{ template "_internal/opengraph.html" . }}
 
   <title>
-  {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
-  {{ if eq $url "/" }}
+  {{ if eq .Kind "home" }}
       {{ .Site.Title }}
   {{ else }}
-      {{ if .Params.heading }} {{ .Params.heading }} {{ else }} {{ .Title }} {{ end }}
+      {{ if .Params.heading }} {{ .Params.heading }} | {{ .Site.Title }} {{ else }} {{ .Title }} | {{ .Site.Title }} {{ end }}
   {{ end }}
   </title>
 
