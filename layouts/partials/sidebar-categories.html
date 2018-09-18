@@ -19,7 +19,7 @@
       </div>
 
       <div class="li-x post-meta" style="margin-left: -8px;">
-        {{ if eq $kind "setion" }}
+        {{ if eq $kind "section" }}
           <!-- Section -->
           {{ range $index, $element := where .ByCount "Name" "in" $terms }}
             {{ if gt $index 0 }}
