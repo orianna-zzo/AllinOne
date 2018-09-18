@@ -91,7 +91,7 @@ a:active .active-color  {
   color: var(--text-light);
 }
 
-.container .content {
+.container.content {
   padding: 0 8rem;
 }
 

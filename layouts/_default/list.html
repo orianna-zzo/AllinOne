@@ -2,29 +2,30 @@
   <main class="post-main-wrapper px-5">
     <!-- <div class="container"> -->
     <div class="row">
-      <!-- Sidebar -->
-      <div class="col-md-3">
-        <!-- <hr> -->
-        
-        {{ partial "sidebar-categories.html" . }}
-        
-        {{ partial "sidebar-tags.html" . }}
 
-        {{ partial "sidebar-series.html" . }}
+      {{ $single := add (add (len (where .Pages ".Params.categories" "ne" nil)) (len (where .Pages ".Params.series" "ne" nil)) ) (len (where .Pages ".Params.tags" "ne" nil)) }}
+      {{ if gt $single 0 }}
+        <!-- Sidebar -->
+        <div class="col-md-3">
+          {{ partial "sidebar-categories.html" . }}    
+          {{ partial "sidebar-tags.html" . }}
+          {{ partial "sidebar-series.html" . }}
+        </div>
+        <!-- /.Sidebar -->
 
-      </div>
-      <!-- /.Sidebar -->
-
-      <!-- Post list -->
-      <!-- <div class="content"> -->
-      <div class="col-md-9 mt-3">  
-        <ul>
-          {{ partial "page-heading.html" . }}
-          
-          {{ if .Content }}
-            <div class="post-content markdown">
-              {{ .Content }}
-            </div>
+        <!-- Post list -->
+        <!-- <div class="content"> -->
+        <div class="col-md-9 mt-3">  
+      {{ else }}
+        <div class="container content mt-3">  
+      {{ end }}
+          <ul>
+            {{ partial "page-heading.html" . }}
+            
+            {{ if .Content }}
+              <div class="post-content markdown">
+                {{ .Content }}
+              </div>
           {{ end }}  
         </ul>
         <div>
