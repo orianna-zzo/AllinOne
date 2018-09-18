@@ -62,7 +62,11 @@ a:hover, a:active {
 
 
 .active-color .active *,
-.active-color .active {
+.active-color .active,
+.active-color a:hover,
+.active-color a:active,
+a:hover .active-color,
+a:active .active-color  {
   /* color: #38849e;
   border-color: #38849e; */
   color: var(--active-color);
@@ -223,6 +227,13 @@ a:hover.post-meta, a:active.post-meta {
   display: inline-block;
 }
 
+.flex-reverse {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;

@@ -3508,7 +3508,7 @@
       };
 
       _proto._process = function _process() {
-        var scrollTop = this._getScrollTop() + this._config.offset;
+        var scrollTop = this._getScrollTop() + this._config.offset + 1;
 
         var scrollHeight = this._getScrollHeight();
 
