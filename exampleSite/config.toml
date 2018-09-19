@@ -1,7 +1,7 @@
 baseURL                   = "https://orianna-zzo.github.io/AllinOne-html/"
 projectDir                 = "AllinOne-html"
 builddrafts                = false
-languageCode               = "zn-cmn-Hans"
+languageCode               = "zn-Hans"
 canonifyurls               = true
 contentdir                 = "content"
 layoutdir                  = "layouts"
@@ -12,7 +12,6 @@ summaryLength              = 200
 Paginate                   = 1
 
 theme                      = "AllinOne"
-author                     = "Orianna"
 title                      = "Orianna"
 
 
@@ -54,6 +53,7 @@ pygmentsuseclasses         = true
 [params]
   faviconfile              = "img/zheng.png"               # from static/
   avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png 
+  author                   = "Orianna"
   description              = ["Be myself.", "Love the wonderful world.", "Do the right things and be a better man."]           # appears in the site header when set to a non-empty string
   welcome_head             = "Hello, World!"
   welcome_word             = "~ No Day But Today ~"
