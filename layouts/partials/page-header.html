@@ -1,12 +1,6 @@
-{{ $path := "/themes/AllinOne/static/img/header-slides" }}
-{{ if .Site.Params.slidesDirPath }}
-  {{ $path := $.Site.Params.slidesDirPath }}
-{{ end }}
-  
-{{ $pathURL := "img/header-slides" }}
-{{ if .Site.Params.slidesDirPathURL }}
-  {{ $pathURL := $.Site.Params.slidesDirPathURL }} 
-{{ end }} 
+{{ $path := cond (gt (len .Site.Params.slidesDirPath) 0) $.Site.Params.slidesDirPath "/themes/AllinOne/static/img/header-slides" }}
+{{ $pathURL := cond (gt (len .Site.Params.slidesDirPathURL) 0) $.Site.Params.slidesDirPathURL "img/header-slides" }} 
+
 
 {{ $files := readDir $path  }}
 {{ $files := where $files  "Name" "ne" ".DS_Store" }}
