@@ -293,7 +293,8 @@ post card
   transition: transform 0.2s ease-out;
 }
 
-.post-card .view:hover img {
+.post-card .view:hover img,  
+.post-card a:hover img {
   -moz-transform: scale(1.05);
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
