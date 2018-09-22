@@ -447,21 +447,28 @@ Markdown
   /* border: 1px solid #e5e5e5; */
   border: 1px solid var(--grey-l3);
 }
- .markdown tbody tr:nth-child(odd) td,
- .markdown tbody tr:nth-child(odd) th {
+
+.markdown tbody tr:nth-child(odd) td,
+.markdown tbody tr:nth-child(odd) th {
   /* background-color: #f7f7f7; */
   background-color: var(--grey-l4);
  }
 
- .markdown img {
+.markdown img {
   margin: 1rem 0;
   max-width: 100%;
   -webkit-border-radius:  .25rem;
   border-radius: .25rem;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
   -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
-
 }
+
+.markdown .no-border img {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+
 
 /*
  
