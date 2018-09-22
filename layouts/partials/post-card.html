@@ -24,9 +24,9 @@
     {{ end }}
 
     {{ if .Params.summary }}
-      {{ .Params.summary }}
+      {{ .Params.summary| plainify }}
     {{ else }}
-      {{ .Summary }}......
+      {{ .Summary | plainify }}......
     {{ end }}
   </a>
 
