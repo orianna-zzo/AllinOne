@@ -18,3 +18,8 @@
   
 - id: nextPost
   translation: "Next"  
+
+- id: postCount
+  translation: 
+    one: "One post"
+    other: "{{ .Count }} posts"

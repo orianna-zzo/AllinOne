@@ -16,3 +16,6 @@
   
 - id: nextPost
   translation: "下一篇" 
+
+- id: postCount
+  translation: "共有{{ .Count }}篇文章"

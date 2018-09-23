@@ -208,7 +208,8 @@ a:hover.post-meta, a:active.post-meta {
   content: "•";
 }
 
-.post-meta .middot {
+.div-x .middot,
+.li-x .middot {
     font-size: 6px;
     margin: 0;
     padding: 0;
@@ -1125,7 +1126,7 @@ toc-nav  scrollspy
 
 
 /* 
-  temp
+  temp term list
  */
 
  .post-item {
