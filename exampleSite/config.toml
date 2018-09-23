@@ -1,5 +1,4 @@
-baseURL                   = "https://example.com/"
-projectDir                 = "AllinOne-html"
+baseURL                   = "https://example.com"
 builddrafts                = false
 languageCode               = "zn-Hans"
 canonifyurls               = true
@@ -9,14 +8,12 @@ publishdir                 = "public"
 enableEmoji                = true
 hasCJKLanguage             = true
 summaryLength              = 200
-Paginate                   = 5
+Paginate                   = 3
 
 theme                      = "AllinOne"
 title                      = "Orianna"
 
-
 pygmentsuseclasses         = true
-
 
 
 [permalinks]
@@ -34,25 +31,25 @@ pygmentsuseclasses         = true
     name                   = "Blog"
     weight                 = -120
     identifier             = "blog"
-    url                    = "/blog/"  
+    url                    = "blog/"  
 
   [[menu.main]]
     name                   = "Moment"
     weight                 = -110
     identifier             = "moment"
-    url                    = "/moment/" 
+    url                    = "moment/" 
 
   [[menu.main]]
     name                   = "About"
     weight                 = -100
     identifier             = "about"
-    url                    = "/about/"  
+    url                    = "about/"  
 
  
 
 [params]
   faviconfile              = "img/zheng.png"               # from static/
-  avatar                   = "img/profile.png"             # path to image in static dir e.g img/avatar.png 
+  avatar                   = "img/profile.jpg"             # path to image in static dir e.g img/avatar.png 
   author                   = "Orianna"
   description              = ["Be myself.", "Love the wonderful world.", "Do the right things and be a better man."]           # appears in the site header when set to a non-empty string
   welcome_head             = "Hello, World!"
@@ -65,11 +62,14 @@ pygmentsuseclasses         = true
   noshowreadtime           = false                         # if true, don't show "<x> minutes read" in posts
 
   # slides
-  slidesDirPath            = "/themes/AllinOne/static/img/header-slides"    # path to image in local dir (for hugo)
-  slidesDirPathURL         = "/img/header-slides"    # path to image in static dir (for static pages)
+  slidesDirPath            = "themes/AllinOne/static/img/header-slides"    # path to image in local dir (path for hugo)
+  slidesDirPathURL         = "img/header-slides"    # path to image in static dir (for static pages)
 
   # highlighting 
   highlightjs              = true
+
+  # latex
+  katex                    = true
 
   # links
   email                    = "you@email.com"

@@ -560,8 +560,8 @@ Avatar
   border-radius: 50%;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
   max-width: 300px;
-  -webkit-mask-image: url(/img/mask/circle.svg)!important;
-  mask-image: url(/img/mask/circle.svg)!important;
+  -webkit-mask-image: url(../img/mask/circle.svg)!important;
+  mask-image: url(../img/mask/circle.svg)!important;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   width: 50px;

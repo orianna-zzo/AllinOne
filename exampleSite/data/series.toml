@@ -1,12 +1,11 @@
 [[series]]
 name = "观后repo"
-img = "/images/blog/2018-08/test3.jpg"
+img = "images/blog/2018-08/test3.jpg"
 summary = "This is the place I write reviews"
 
 [[series]]
 name = "blog养成记"
-img = "/images/blog/2018-08/test5.jpg"
+img = "images/blog/2018-08/test5.jpg"
 summary = "How I build up my personal website"
 
-# [[series]]
-# name = "前端试水"
+

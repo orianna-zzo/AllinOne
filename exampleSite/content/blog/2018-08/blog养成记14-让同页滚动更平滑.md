@@ -7,17 +7,17 @@ title: "Blog养成记(14) 让同页滚动更平滑"
 tags: ["前端", "js", "blog"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
-img: "/images/blog/2018-08/test1.jpg"
+img: "images/blog/2018-08/test1.jpg"
 toc: true
 ---
 
 上一期说到增加toc侧边栏，但是直接跳转非常突兀，因此特地找了让同页跳转滚动更平滑的插件。
+\<code\>
 
-<!--more--> 
 
 ## 配置smooth-scroll插件
 
-首先[下载smooth-scroll插件](https://github.com/kswedberg/jquery-smooth-scroll/releases)，将其中`jquery.smooth-scroll.js`放入`js`文件夹中。
+首先[下载smooth-scroll插件](https://github.com/kswedberg/jquery-smooth-scroll/releases)，将其中`jquery.smooth-scroll.js`放入`js`文件夹中。<!--more--> 
 
 再在\<script>中引入该js：
 

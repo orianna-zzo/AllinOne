@@ -7,7 +7,7 @@ title: "Blog养成记(11) 给网站加个小icon"
 tags: ["前端", "css", "blog"]
 series: ["Blog养成记"]
 categories: ["杂技浅尝"]
-img: "/images/blog/2018-08/test5.jpg"
+img: "images/blog/2018-08/test5.jpg"
 toc: true
 summary: "我们经常看到百度等网页会有自己的网站图标，在浏览器打开时显示在左侧，那如何给自己的网站也添加这么一个icon呢？"
 ---

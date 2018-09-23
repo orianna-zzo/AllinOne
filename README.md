@@ -56,6 +56,8 @@ $ git clone https://github.com/orianna-zzo/AllinOne.git themes/AllinOne
 
 Please see the sample [`config.toml`](https://github.com/orianna-zzo/AllinOne/blob/master/exampleSite/config.toml). The theme is built on Hugo v0.46.
 
+If you use this as a theme of your project website (not the root directory),make sure not to use a forward slash `/` in the beginning of a `PATH` in your `config.toml`, `img` in your post head and `url` in your data direcotory, because Hugo will turn it into a relative URL and the `absURL` function will have no effect.
+
 ### Carousel Picture
 
 Set two params in `config.toml`, `slidesDirPath` and `slidesDirPathURL`.
@@ -88,7 +90,7 @@ title: "This is an example"
 tags: ["css", "blog"]
 series: ["Example"]
 categories: ["Sci"]
-img: "/images/blog/2018-08/test5.jpg"
+img: "images/blog/2018-08/test5.jpg"
 toc: true
 summary: "This is an example of adding an intro picture to the post. "
 ---
@@ -116,19 +118,19 @@ There are three ways to add summary to each post.
 
 ### Series Intro Picture
 
-By default, the series recommendation card list in the sidebar use `/themes/AllinOne/static/img/default.png` as intro picture. You can set `name`, `img`, and `summary` in `/data/series.toml`. `name` of the series should be in lower capitals. If the series cannot be found in `series.toml`, `default.png` will be used.
+By default, the series recommendation card list in the sidebar use `themes/AllinOne/static/img/default.png` as intro picture. You can set `name`, `img`, and `summary` in `data/series.toml`. `name` of the series should be in lower capitals. If the series cannot be found in `series.toml`, `default.png` will be used.
 
-Here is an example of `/data/series.toml`:
+Here is an example of `data/series.toml`:
 
 ```TOML
 [[series]]
 name = "review repo"
-img = "/images/blog/2018-08/test3.jpg"
+img = "images/blog/2018-08/test3.jpg"
 summary = "This is the place I write reviews"
 
 [[series]]
 name = "blog diary"
-img = "/images/blog/2018-08/test5.jpg"
+img = "images/blog/2018-08/test5.jpg"
 summary = "How I build up my personal website"
 ```
 

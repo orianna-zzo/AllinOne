@@ -28,7 +28,7 @@
   </ul>
   {{ with .Params.img }}
     <div class="view">
-      <img src="{{ . | urlize }}" />
+      <img src="{{ . | absURL }}" />
     </div>
   {{ end }}
 
