@@ -1,9 +1,13 @@
 name        = "AllinOne"
 license     = "MIT"
 licenselink = "https://github.com/orianna-zzo/AllinOne/blob/master/LICENSE"
-description = "All you need of a blog in one template."
-homepage    = "https://github.com/orianna-zzo/AllinOnee"
+description = "All you need for a blog in one template."
+homepage    = "https://github.com/orianna-zzo/AllinOne"
+demo        = "https://orianna-zzo.github.io/AllinOne-html/"
+tags        = ["blog", "personal"]
+features    = ["full image carousel", "hierachical toc", "katex"]
+min_version = 0.46
 
 [author]
   name      = "ZHENG Zi'ou"
-  homepage  = "https://github.com/orianna-zzo"
+  homepage  = "https://orianna-zzo.github.io/"

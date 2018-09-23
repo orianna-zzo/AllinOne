@@ -1,4 +1,4 @@
-baseURL                   = "https://orianna-zzo.github.io/AllinOne-html/"
+baseURL                   = "https://example.com/"
 projectDir                 = "AllinOne-html"
 builddrafts                = false
 languageCode               = "zn-Hans"
@@ -9,7 +9,7 @@ publishdir                 = "public"
 enableEmoji                = true
 hasCJKLanguage             = true
 summaryLength              = 200
-Paginate                   = 1
+Paginate                   = 5
 
 theme                      = "AllinOne"
 title                      = "Orianna"
@@ -83,6 +83,6 @@ pygmentsuseclasses         = true
   include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
   
   # analytics
-  googleAnalytics          = "UA-90057853-1"
+  googleAnalytics          = "your-google-analytic-id"
     
     
