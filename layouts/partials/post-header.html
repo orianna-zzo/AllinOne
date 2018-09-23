@@ -2,12 +2,12 @@
   <ul class="post-meta li-x">
     {{ if .Params.categories }}
       {{ range .Params.categories }}
-        <li><a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> {{ . }} </a></li>
+        <li><a href="{{ "categories/" | absLangURL }}{{ . | urlize }}"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> {{ . }} </a></li>
       {{ end }}
     {{ end }}
     {{ if .Params.series }}
       {{ range .Params.series }}
-        <li><a href="{{ "/series/" | relLangURL }}{{ . | urlize }}"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>{{ . }}</a></li>
+        <li><a href="{{ "series/" | absLangURL }}{{ . | urlize }}"><i class="fas fa-bookmark pr-1" aria-hidden="true"></i>{{ . }}</a></li>
       {{ end }}
     {{ end }}
   </ul>

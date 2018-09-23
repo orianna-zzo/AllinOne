@@ -10,7 +10,7 @@
   {{ with .Site.Taxonomies.categories }}
     <div class="post-meta">
       <div class="mb-2">
-        <a href="{{ "/categories/" | relLangURL }}">
+        <a href="{{ "categories/" | absLangURL }}">
           <span class="font-weight-bold text-uppercase post-meta">
             <i class="fas fa-folder-open pr-1" aria-hidden="true"></i> 
             Categories
@@ -26,7 +26,7 @@
               <li class="middot"></li>
             {{ end }}
             <li class="py-1">
-              <a href="{{ "/categories/" | relLangURL }}{{ $element.Name | urlize }}">
+              <a href="{{ "categories/" | absLangURL }}{{ $element.Name | urlize }}">
                 <span>{{ $element.Name | title }} ({{ .Count }})</span>
               </a>
             </li>           
@@ -38,7 +38,7 @@
               <li class="middot"></li>
             {{ end }}
             <li class="py-1">
-              <a href="{{ "/categories/" | relLangURL }}{{ $element.Name | urlize }}">
+              <a href="{{ "categories/" | absLangURL }}{{ $element.Name | urlize }}">
                 <span>{{ $element.Name | title }} ({{ .Count }})</span>
               </a>
             </li>           

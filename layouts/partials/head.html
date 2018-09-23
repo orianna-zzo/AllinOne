@@ -31,25 +31,25 @@
   {{ end }}
 
   <!-- Font Awesome -->
-  <link href="/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+  <link href="{{ "css/vendors-extensions/fontawesome/all.min.css" | absURL }}" rel="stylesheet">
 
   <!-- Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
-  <link href="/css/font.css" rel="stylesheet"> 
+  <link href="{{ "css/font.css" | absURL }}" rel="stylesheet"> 
     
   <!-- CSS -->
-  <link href="/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet"> 
-  <link href="/css/vendors/mdb/style.min.css" rel="stylesheet"> 
-  <link href="/css/main.css" rel="stylesheet">
+  <link href="{{ "css/vendors/bootstrap4/bootstrap.min.css" | absURL }}" rel="stylesheet">
+  <link href="{{ "css/vendors-extensions/mdb/mdb.min.css" | absURL }}" rel="stylesheet"> 
+  <link href="{{ "css/vendors/mdb/style.min.css" | absURL }}" rel="stylesheet"> 
+  <link href="{{ "css/main.css" | absURL }}" rel="stylesheet">
 
 
   <!-- Icon -->
   <link rel="shortcut icon"
   {{ if .Site.Params.faviconfile }}
-      href="/{{ .Site.Params.faviconfile }}"
+      href="{{ .Site.Params.faviconfile | absURL }}"
   {{ else if.Site.Params.avatar}}
-      href="/{{ .Site.Params.avatar }}"
+      href="{{ .Site.Params.avatar | absURL }}"
   {{ end }}
   >
 
@@ -69,12 +69,14 @@
 
 
   <!-- KaTeX -->
-  <link rel="stylesheet" href="/js/vendors/katex/katex.min.css">
+  {{ if .Site.Params.katex }}  
+    <link rel="stylesheet" href="{{ "js/vendors/katex/katex.min.css"| absURL }}">
+  {{ end }}
   <!-- /.KaTeX -->
 
   <!-- Highlight -->
   {{ if .Site.Params.highlightjs }}  
-    <link rel="stylesheet" href="/css/vendors/highlight/github-gist.css">
+    <link rel="stylesheet" href="{{ "css/vendors/highlight/github-gist.css"| absURL }}">
   {{ end }}
 
 </head>

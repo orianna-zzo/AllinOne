@@ -45,7 +45,7 @@
           <div class="row pt-3">
             <div class="col-md-6">
               {{ if .PrevInSection }}
-                <a href={{.PrevInSection.Permalink}} class="post-meta">{{ i18n "previousPost" }}
+                <a href={{ .PrevInSection.Permalink }} class="post-meta">{{ i18n "previousPost" }}
                   <div class="pt-2 pb-5 d-flex">
                     <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
                     <span>{{ .PrevInSection.Title }}</span>
@@ -56,7 +56,7 @@
             
             <div class="col-md-6 text-right" >
               {{ if .NextInSection }}
-                <a href={{.NextInSection.Permalink}} class="post-meta">{{ i18n "nextPost" }}
+                <a href={{ .NextInSection.Permalink }} class="post-meta">{{ i18n "nextPost" }}
                   <div class="pt-2 pb-5 flex-reverse">
                     <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
                     <span>{{ .NextInSection.Title }}</span>

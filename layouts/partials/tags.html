@@ -1,9 +1,9 @@
 
 <div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="{{ "/tags/" | relLangURL }}"><i class="fas fa-tags"></i></a></li>
+  <li class="pr-0"><a href="{{ "tags/" | absLangURL }}"><i class="fas fa-tags"></i></a></li>
   <div class="tags-sm">
     {{ range .Params.tags }}
-      <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" role="button">{{ . }} </a></li>
+      <li><a href="{{ "tags/" | absLangURL }}{{ . | urlize }}" role="button">{{ . }} </a></li>
       <!-- <button type="button" class="btn btn-outline-default btn-rounded waves-effect">Button</button> -->
     {{ end }}
   </div>

@@ -6,12 +6,20 @@ Hugo theme - AllinOne.
 
 Here are some screen shots.
 
+![Carousel](https://github.com/orianna-zzo/AllinOne/blob/master/images/screenshot.png)
+
+![List](https://github.com/orianna-zzo/AllinOne/blob/master/images/screenshot2.png)
+
+![Post](https://github.com/orianna-zzo/AllinOne/blob/master/images/screenshot3.png)
+
+
 ## Features
 
 * Responsive full image carousel (Responsive text layout on it should be improved)
 * Suited for blogging and personal webpages with static profile image (avatar) and website image (faviconfile)
 * Smooth scroll && TOC Scrollspy for content (h1~h4)
 * Syntax highlighting with highlightjs 
+* Katex for Latex
 * Google Analytics
 * Font Awesome 3.1.0
 * Built-in Tags, Series and Categories && show recomendations of the section in the sidebar
@@ -26,6 +34,7 @@ Most features are optional and can be individually enabled/disabled in your `con
 * [Quick Start](#quick-start)
 * [Usage](#usage)
   * [Configuration](#configuration)
+  * [Carousel Picture](#carousel-picture)
   * [Post Intro Picture](#post-intro-picture)
   * [Post Summary](#post-summary)
   * [Series Intro Picture](#series-intro-picture)
@@ -46,6 +55,24 @@ $ git clone https://github.com/orianna-zzo/AllinOne.git themes/AllinOne
 ### Configuration
 
 Please see the sample [`config.toml`](https://github.com/orianna-zzo/AllinOne/blob/master/exampleSite/config.toml). The theme is built on Hugo v0.46.
+
+### Carousel Picture
+
+Set two params in `config.toml`, `slidesDirPath` and `slidesDirPathURL`.
+
+`slidesDirPath` sets the directory path for hugo server to search. `slidesDirPathURL` sets the rel url for the images.
+
+Here are simple examples for quick start.
+
+```toml
+# if you want to use images in the theme (defult in the theme)
+slidesDirPath    = "themes/AllinOne/static/img/header-slides"  
+slidesDirPathURL = "img/header-slides"
+
+# if you want to use images in static/img/header-slides
+slidesDirPath  = "static/img/header-slides"  
+slidesDirPathURL = "img/header-slides"
+```
 
 ### Post Intro Picture
 
