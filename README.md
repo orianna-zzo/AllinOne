@@ -17,7 +17,7 @@ Here are some screen shots.
 
 * Responsive full image carousel (Responsive text layout on it should be improved)
 * Suited for blogging and personal webpages with static profile image (avatar) and website image (faviconfile)
-* Smooth scroll && TOC Scrollspy for content (h1~h4)
+* Smooth scroll && hierarchical TOC Scrollspy for content (h1~h4)
 * Syntax highlighting with highlightjs 
 * Katex for Latex
 * Google Analytics
