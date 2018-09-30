@@ -43,12 +43,19 @@
 
 <!-- Google Analytics -->
 {{ template "_internal/google_analytics_async.html" . }}
+<!-- /.Google Analytics -->
 
 <!-- mdb -->
 <script type="text/javascript">
   // Animations initialization
   new WOW().init();
 </script>
+<!-- /.mdb -->
 
+<!-- busuanzi -->
+{{ if .Site.Params.busuanzi }}
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+{{ end }}
+<!-- /.busuanzi -->
 
 

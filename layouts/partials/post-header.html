@@ -25,6 +25,10 @@
       <li class="middot"></li>
       <li>{{ i18n "readingTime" .ReadingTime }}</li>
     {{ end }}
+    {{ if .Site.Params.busuanzi }}
+      <li class="middot"></li>
+      <li><span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span>{{ i18n "pageView" }}</span></li>
+    {{ end }}
   </ul>
   {{ with .Params.img }}
     <div class="view">

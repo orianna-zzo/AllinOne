@@ -19,3 +19,6 @@
 
 - id: postCount
   translation: "共有{{ .Count }}篇文章"
+
+- id: pageView
+  translation: "次阅读"

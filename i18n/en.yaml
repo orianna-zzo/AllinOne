@@ -23,3 +23,6 @@
   translation: 
     one: "One post"
     other: "{{ .Count }} posts"
+
+- id: pageView
+  translation: " page view" 
