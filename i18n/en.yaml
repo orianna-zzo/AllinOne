@@ -1,4 +1,7 @@
 ---
+- id: buttonHome
+  translation: "Home"
+
 - id: latestPosts
   translation: "Latest Posts"
 

@@ -1,4 +1,7 @@
 ---
+- id: buttonHome
+  translation: "Domů"
+
 - id: latestPosts
   translation: "Nejnovější příspěvky"
 
