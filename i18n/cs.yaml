@@ -1,0 +1,25 @@
+---
+- id: latestPosts
+  translation: "Nejnovější příspěvky"
+
+- id: pageNotFound
+  translation: "Ajaj! Stránku nelze nalézt..."
+
+- id: readingTime
+  translation:
+    one: "Čtení na minutu"
+    other: "Čtení na {{ .Count }} minuty"
+
+- id: return
+  translation: "Zpět"
+
+- id: previousPost
+  translation: "Předchozí"
+
+- id: nextPost
+  translation: "Další"
+
+- id: postCount
+  translation:
+    one: "1 příspěvek"
+    other: "{{ .Count }} příspěvky"
