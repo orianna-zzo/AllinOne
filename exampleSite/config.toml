@@ -1,4 +1,5 @@
-baseURL                   = "https://example.com"
+baseURL                    = "https://example.com"
+relativeURLS               = true
 builddrafts                = false
 languageCode               = "zn-Hans"
 canonifyurls               = true
