@@ -78,6 +78,7 @@ pygmentsuseclasses         = true
   facebook                 = "//facebook.com/you"
   twitter                  = "//twitter.com/you" 
   px500                    = "//px500"
+  flickr                   = "//flickr.com/photos/you"
   instagram                = "//instagram.com/you"
   include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
   

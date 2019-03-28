@@ -28,6 +28,10 @@
         <a href="{{ $.Site.Params.px500 }}" target="_blank" rel="noopener"><i class="fab fa-500px mr-3" aria-hidden="true"></i></a>
     {{ end }}
 
+    {{ if $.Site.Params.flickr }}
+        <a href="{{ $.Site.Params.flickr }}" target="_blank" rel="noopener"><i class="fab fa-flickr mr-3" aria-hidden="true"></i></a>
+    {{ end }}
+
 
     {{ if $.Site.Params.email }}
         <a href="mailto:{{ $.Site.Params.email }}"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
