@@ -28,7 +28,7 @@
 
         <!-- First slide -->
         <div class="carousel-item active">
-          <div class="view" style="background-image: url('{{ $pathURL | absURL }}/{{ .Name }}'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('{{ $pathURL  }}/{{ .Name }}'); background-repeat: no-repeat; background-size: cover;">
 
             <!-- Mask & flexbox options-->
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -49,7 +49,7 @@
 
         <!-- Second slide -->
         <div class="carousel-item">
-          <div class="view" style="background-image: url('{{ $pathURL | absURL }}/{{ .Name }}'); background-repeat: no-repeat; background-size: cover;">
+          <div class="view" style="background-image: url('{{ $pathURL  }}/{{ .Name }}'); background-repeat: no-repeat; background-size: cover;">
 
             <!-- Mask & flexbox options -->
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -76,9 +76,9 @@
       <div class="col-12 col-sm-5 align-middle">
         <a href="{{ .Site.BaseURL }}">
           {{ if $.Site.Params.avatar }}
-            <img class="pull-right avatar avatar-lg " src="{{ $.Site.Params.avatar | absURL }}" alt="" >
+            <img class="pull-right avatar avatar-lg " src="{{ $.Site.Params.avatar  }}" alt="" >
           {{ else if $.Site.Params.faviconfile }}
-            <img class="pull-right avatar avatar-lg " src="{{ $.Site.Params.faviconfile | absURL }}" alt="" >
+            <img class="pull-right avatar avatar-lg " src="{{ $.Site.Params.faviconfile  }}" alt="" >
           {{ end }}
         </a>
       </div>

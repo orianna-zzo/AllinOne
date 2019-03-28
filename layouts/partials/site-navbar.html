@@ -7,7 +7,7 @@
       <!-- Brand -->
       <a class="navbar-brand" href="{{ .Site.BaseURL }}">
           {{ if .Site.Params.avatar }}
-        <img class="avatar" src="{{ .Site.Params.faviconfile | absURL }}" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        <img class="avatar" src="{{ .Site.Params.faviconfile  }}" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
         {{ end }}
         <strong> {{ .Site.Params.author }}</strong>
       </a>
@@ -28,7 +28,7 @@
           </li>
           {{ range .Site.Menus.main }}   
             <li class="nav-item {{ if eq $type (substr .URL 1 -1) }} active {{ end }}">
-              <a class="nav-link" href="{{ .URL | absURL }}" >{{ .Name }} {{ if eq $type (substr .URL 1 -1) }} <span class="sr-only">(current)</span>{{ end }} </a>
+              <a class="nav-link" href="{{ .URL  }}" >{{ .Name }} {{ if eq $type (substr .URL 1 -1) }} <span class="sr-only">(current)</span>{{ end }} </a>
             </li>
           
           {{ end }}
