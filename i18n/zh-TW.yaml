@@ -1,0 +1,21 @@
+---
+- id: latestPosts
+  translation: "近期文章"
+
+- id: pageNotFound
+  translation: "哎呀！找不到該網頁..."
+
+- id: readingTime
+  translation: "需要閱讀{{ .Count }}分鐘"
+
+- id: return
+  translation: "返回"
+
+- id: previousPost
+  translation: "上一篇"
+  
+- id: nextPost
+  translation: "下一篇" 
+
+- id: postCount
+  translation: "共有{{ .Count }}篇文章"
