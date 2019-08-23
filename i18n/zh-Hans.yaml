@@ -13,9 +13,9 @@
 
 - id: previousPost
   translation: "上一篇"
-  
+
 - id: nextPost
-  translation: "下一篇" 
+  translation: "下一篇"
 
 - id: postCount
   translation: "共有{{ .Count }}篇文章"
