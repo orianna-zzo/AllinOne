@@ -36,14 +36,14 @@
       <!-- Post list -->
       <!-- <div class="pt-5 px-5 mx-5"> -->
       <div class="col-md-9 mt-3">  
-        {{ $totalpostscount := len (.Data.Pages) }}
+        {{ $totalpostscount := len (.Site.RegularPages) }}
         {{ $latestpostscount := .Site.Params.latestpostscount | default $totalpostscount }}
         {{ if gt $latestpostscount 0 }}
           <!-- <div class='post-heading'>
             {{ i18n "latestPosts" }}
           </div> -->
           <div>
-              {{ range (first $latestpostscount .Data.Pages.ByPublishDate.Reverse ) }}
+              {{ range (first $latestpostscount .Site.RegularPages.ByPublishDate.Reverse ) }}
                   {{ partial "post-card.html" . }}
               {{ end }}
               
