@@ -16,10 +16,6 @@
       <a href="{{ $.Site.Params.facebook }}" target="_blank" rel="noopener"><i class="fab fa-facebook-f mr-3" aria-hidden="true"></i></a>
     {{ end }}
 
-    {{ if $.Site.Params.googleplus }}
-    <a href="{{ $.Site.Params.googleplus }}" target="_blank" rel="noopener"><i class="fab fa-google-plus-g mr-3" aria-hidden="true"></i></a>
-    {{ end }}
-
     {{ if $.Site.Params.twitter }}
         <a href="{{ $.Site.Params.twitter }}" target="_blank" rel="noopener"><i class="fab fa-twitter mr-3" aria-hidden="true"></i></a>
     {{ end }}
@@ -30,6 +26,10 @@
 
     {{ if $.Site.Params.px500 }}
         <a href="{{ $.Site.Params.px500 }}" target="_blank" rel="noopener"><i class="fab fa-500px mr-3" aria-hidden="true"></i></a>
+    {{ end }}
+
+    {{ if $.Site.Params.flickr }}
+        <a href="{{ $.Site.Params.flickr }}" target="_blank" rel="noopener"><i class="fab fa-flickr mr-3" aria-hidden="true"></i></a>
     {{ end }}
 
 

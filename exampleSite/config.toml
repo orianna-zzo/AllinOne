@@ -76,9 +76,9 @@ pygmentsuseclasses         = true
   github                   = "//github.com/you"
   linkedin                 = "//linkedin.com/in/you"
   facebook                 = "//facebook.com/you"
-  googleplus               = "//google.com/you"
   twitter                  = "//twitter.com/you" 
   px500                    = "//px500"
+  flickr                   = "//flickr.com/photos/you"
   instagram                = "//instagram.com/you"
   include_rss              = true                          # include RSS <link> tag in <head> and show RSS icon
   

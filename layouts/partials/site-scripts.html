@@ -6,31 +6,31 @@
 
 
 <!-- jquery -->
-<script type="text/javascript" src="{{ "js/vendors/jquery/jquery-3.3.1.min.js" | absURL }}"></script><!-- <script>window.jQuery || document.write('<script src="dist/js/vendors/jquery-slim.min.js"><\/script>')</script> -->
-<script type="text/javascript" src="{{ "js/vendors/jquery/jquery.smooth-scroll.min.js" | absURL }}"></script>
+<script type="text/javascript" src="{{ "js/vendors/jquery/jquery-3.3.1.min.js"  }}"></script><!-- <script>window.jQuery || document.write('<script src="dist/js/vendors/jquery-slim.min.js"><\/script>')</script> -->
+<script type="text/javascript" src="{{ "js/vendors/jquery/jquery.smooth-scroll.min.js"  }}"></script>
 <!-- /.jquery -->
 
 
-<script type="text/javascript" src="{{ "js/vendors/popper.min.js" | absURL }}"></script>
-<script type="text/javascript" src="{{ "js/vendors/holder.min.js" | absURL }}"></script>
-<script type="text/javascript" src="{{ "js/vendors-extensions/bootstrap4/bootstrap.js" | absURL }}" ></script>
+<script type="text/javascript" src="{{ "js/vendors/popper.min.js"  }}"></script>
+<script type="text/javascript" src="{{ "js/vendors/holder.min.js"  }}"></script>
+<script type="text/javascript" src="{{ "js/vendors-extensions/bootstrap4/bootstrap.js"  }}" ></script>
 
-<script type="text/javascript" src="{{ "js/vendors/mdb/mdb.min.js" | absURL }}"></script>
+<script type="text/javascript" src="{{ "js/vendors/mdb/mdb.min.js"  }}"></script>
 
-<script type="text/javascript" src="{{ "js/main.js" | absURL }}"></script>
+<script type="text/javascript" src="{{ "js/main.js"  }}"></script>
 
 
 <!-- Highlight -->
 {{ if .Site.Params.highlightjs }}  
-  <script src="{{ "js/vendors/highlight.pack.js" | absURL }}"> </script>
+  <script src="{{ "js/vendors/highlight.pack.js"  }}"> </script>
   <script>hljs.initHighlightingOnLoad();</script>
 {{ end }}
 <!-- /.Highlight -->
 
 <!-- KaTeX -->
 {{ if .Site.Params.katex }} 
-  <script src="{{ "js/vendors/katex/katex.min.js" | absURL }}"> </script>
-  <script src="{{ "js/vendors/katex/contrib/auto-render.min.js" | absURL }}"></script>
+  <script src="{{ "js/vendors/katex/katex.min.js"  }}"> </script>
+  <script src="{{ "js/vendors/katex/contrib/auto-render.min.js"  }}"></script>
 
   <script>
       document.addEventListener("DOMContentLoaded", function () {
